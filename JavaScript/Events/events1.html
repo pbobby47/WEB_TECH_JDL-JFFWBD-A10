@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ! HTML Attributes -->
+
+    <h1 onclick="alert('Hello user, you perfomed click event')">I am h1 Tag</h1>
+
+    <h1 onmouseover="alert('Hello user, you perfomed hover event')">I am h1 Tag</h1>
+
+    <button onclick="fun1()">Click Here</button>
+
+    <button onmouseover="fun2()">Hover ME!!!</button>
+
+    <button onclick="fun3Click()" onmouseover="fun3Hover()">
+      Hover / Click
+    </button>
+
+    <button onclick="addContent()">More</button>
+
+    <h2 id="changeColor" onmouseover="changeColorON()" onmouseout="changeColorOFF()">
+      Change Color of the text
+    </h2>
+
+    <script src="./events1.js"></script>
+  </body>
+</html>

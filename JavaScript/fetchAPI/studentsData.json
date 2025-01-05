@@ -1,0 +1,110 @@
+[
+  {
+    "sname": "Vikas",
+    "tenth_school_name": "Govt School Dwaraka sec-22",
+    "tenth_percentage": 78,
+    "tenth_YOP": 2018,
+    "plus2_college_name": "Govt College Sec-22",
+    "plus2_percentage": 86,
+    "plus2_YOP": 2020,
+    "Degree_college_name": "DSEU Dwaraka sec-22",
+    "Degree_percentage": 90,
+    "Degree_YOP": 2024
+  },
+  {
+    "sname": "megha",
+    "tenth_school_name": "D.S.M Public school",
+    "tenth_percentage": 91,
+    "tenth_YOP": 2018,
+    "plus2_college_name": "D.S.M Public school",
+    "plus2_percentage": 80,
+    "plus2_YOP": 2020,
+    "Degree_college_name": "PDM University",
+    "Degree_percentage": 96,
+    "Degree_YOP": 2024
+  },
+  {
+    "sname": "keshav",
+    "tenth_school_name": "S M Arya public school",
+    "tenth_percentage": 84,
+    "tenth_YOP": 2019,
+    "plus2_college_name": " SBM Sr. Sec. School",
+    "plus2_percentage": 86,
+    "plus2_YOP": 2021,
+    "Degree_college_name": "DSEU Dwarka",
+    "Degree_percentage": 80,
+    "Degree_YOP": 2024
+  },
+  {
+    "sname": "ritik",
+    "tenth_school_name": "govt school rohini",
+    "tenth_percentage": 71,
+    "tenth_YOP": 2019,
+    "plus2_college_name": "govt school rohini",
+    "plus2_percentage": 60,
+    "plus2_YOP": 2021,
+    "Degree_college_name": "chor collage",
+    "Degree_percentage": 70,
+    "Degree_YOP": 2024
+  },
+  {
+    "sname": "Rahul",
+    "tenth_school_name": "Saraswati Bal Mandir High School",
+    "tenth_percentage": 87,
+    "tenth_YOP": 2017,
+    "plus2_college_name": "Govt. Sr. Sec. School Bahadurgarh",
+    "plus2_percentage": 72,
+    "plus2_YOP": 2019,
+    "Degree_college_name": "Maharshi Dayanand University Rohtak",
+    "Degree_percentage": 67,
+    "Degree_YOP": 2024
+  },
+  {
+    "sname": "Rishabh",
+    "tenth_school_name": "Ch. heeralal public school",
+    "tenth_percentage": 70,
+    "tenth_YOP": 2019,
+    "plus2_college_name": "Urmila sr. sec.school",
+    "plus2_percentage": 72,
+    "plus2_YOP": 2021,
+    "Degree_college_name": "Faridabad college of engineering management",
+    "Degree_percentage": 70,
+    "Degree_YOP": 2025
+  },
+  {
+    "sname": "ekansh",
+    "tenth_school_name": "ramjas school",
+    "tenth_YOP": 2020,
+    "tenth_percentage": 56,
+    "plus2_college_name": "nutan marathi school",
+    "plus2_percentage": 54,
+    "plus2_YOP": 2017,
+    "Degree_college_name": "jamia hamdard university",
+    "Degree_percentage": 59,
+    "Degree_YOP": 2020
+  },
+  {
+    "sname": "Shubham",
+    "tenth_school_name": "DAV Public School ",
+    "tenth_percentage": 56,
+    "tenth_YOP": 2018,
+    "plus2_college_name": "DAV Public School ",
+    "plus2_percentage": 86,
+    "plus2_YOP": 2020,
+    "Degree_college_name": " DSEU Ambedkar Shakarpur campus 1",
+    "Degree_percentage": 98,
+    "Degree_YOP": 2024
+  },
+  {
+    "sname": "Anurag",
+    "tenth_school_name": "S.D.PUBLIC SCHOOL Patel nagar",
+    "tenth_percentage": 61,
+    "tenth_YOP": 2019,
+    "plus2_college_name": "S.D.PUBLIC SCHOOL patel nagar",
+    "plus2_percentage": 70,
+    "plus2_YOP": 2021,
+    "Degree_college_name": "KIHEAT Nawda",
+    "Degree_percentage": 77,
+    "Degree_YOP": 2024
+  }
+]

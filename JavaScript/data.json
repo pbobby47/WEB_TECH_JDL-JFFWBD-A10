@@ -1,0 +1,27 @@
+[
+  {
+    "sname": "utkarsh",
+    "course": "JFS",
+    "address": "Delhi"
+  },
+  {
+    "sname": "Keshav alias Pankaj",
+    "course": "PFS",
+    "address": "Noida"
+  },
+  {
+    "sname": "Narender",
+    "course": "MERN",
+    "address": "Punjab"
+  },
+  {
+    "sname": "Rizwan",
+    "course": "MERN",
+    "address": "Banglore"
+  },
+  {
+    "sname": "Vikas",
+    "course": "MEAN",
+    "address": "Hyderabad"
+  }
+]
