@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#box1 {
+  height: 200px;
+  width: 200px;
+  background-color: aqua;
+  border: solid;
+  transform: translateX(0px);
+  /* animation-name: demo; */
+  /* animation-duration: 5s; */
+
+  /* ! Example 2 */
+  /* animation-name: example2; */
+  /* animation-duration: 5s; */
+  /* Defines the length of time that an animation takes to complete one cycle */
+  /* animation-iteration-count: infinite; */
+  /* Defines the number of times an animation cycle is played. 
+  The default value is one, meaning the animation will play from beginning to end once. */
+  /* animation-delay: 5s; */
+  /* animation-direction: alternate-reverse; */
+}
+
+/*
+@keyframes demo {
+  from {
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    border: solid;
+    transform: translateX(0px);
+  }
+
+  to {
+    height: 150px;
+    width: 150px;
+    background-color: crimson;
+    border: dashed;
+    transform: translateX(800px);
+  }
+}
+*/
+
+@keyframes example2 {
+  0% {
+    background-color: red;
+    transform: translate(0px, 0px) rotate(0deg);
+    /* border-radius: 0%; */
+  }
+  25% {
+    background-color: blue;
+    transform: translate(1000px, 0px) rotate(360deg);
+    /* border-radius: 50%; */
+  }
+  50% {
+    background-color: darkgreen;
+    transform: translate(1000px, 380px) rotate(-360deg);
+    /* border-radius: 0%; */
+  }
+  75% {
+    background-color: yellow;
+    transform: translate(0px, 380px) rotate(360deg);
+    /* border-radius: 50%; */
+  }
+  100% {
+    background-color: hotpink;
+    transform: translate(0px, 0px) rotate(-360deg);
+    /* border-radius: 0%; */
+  }
+}
+
+/* ! ================= */
+body {
+  background-color: red;
+  animation: disco 15s infinite;
+}
+
+@keyframes disco {
+  0% {
+    background-color: red;
+  }
+  10% {
+    background-color: yellow;
+  }
+  20% {
+    background-color: brown;
+  }
+  30% {
+    background-color: black;
+  }
+  40% {
+    background-color: violet;
+  }
+  50% {
+    background-color: blue;
+  }
+  60% {
+    background-color: crimson;
+  }
+  70% {
+    background-color: aqua;
+  }
+  80% {
+    background-color: orange;
+  }
+  90% {
+    background-color: hotpink;
+  }
+  100% {
+    background-color: red;
+  }
+}

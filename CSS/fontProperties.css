@@ -1,0 +1,70 @@
+/* ! Font Properties
+    1. font-size
+    2. font-style
+    3. font-weight
+    4. font-family
+    5. font-varient
+*/
+
+p {
+  font-size: 20px;
+  /* xx-small , x-small , small , normal , medium , large , x-large , xx-large , Any number*/
+
+  font-weight: normal;
+  /* normal , bold , 100 - 900 */
+
+  font-style: normal;
+  /* normal , italic/oblique */
+
+  /* font-family:Georgia, 'Times New Roman', Times, serif; */
+  font-family: monospace;
+  /* Internal / External */
+  /* ? External 
+    1. search google fonts
+    2. choose one font family and click on it.
+    3. click on getfont that will into the bag.
+    4. click on get embed code
+    5. copy the html code and css code and paste accordingly..
+    
+  */
+
+  /* font-variant: small-caps; */
+}
+
+/* p {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+} */
+
+/* ! ==================== */
+.font1 {
+  font-family: "Ruge Boogie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font2 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font3 {
+  font-family: "Amiko", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#font5 {
+  font-family: "Tiro Kannada", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#font6 {
+  font-family: "Mallanna", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

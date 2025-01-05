@@ -1,0 +1,38 @@
+#container1 {
+  /* height: 150px;
+  width: 150px; */
+
+  /*?  border:border-width border-style border-color ; */
+  /* border-width: 3px ; */
+  /* border-style:dashed; */
+  /* solid , dotted , dashed , double , groove , ridge , none */
+  /* border-color: red; */
+
+  /* border-top: 3px dashed blue;
+  border-bottom: 5px dotted red;
+  border-left: 5px double purple;
+  border-right: 15px groove teal; */
+}
+
+/* ! ====================== */
+#container2 {
+  height: 400px;
+  width: 400px;
+  border: 20px solid red;
+
+  /* border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px; */
+
+  /* border-radius: 50px; */
+  border-radius: 10px 50px 80px 120px;
+}
+
+table {
+  border-spacing: 10px;
+  /* it is equivalent to cellspacing  attribute */
+
+  border-collapse: collapse;
+  /* seperate , collapse */
+}

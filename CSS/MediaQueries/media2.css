@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navBar1 {
+  /* border: solid red; */
+  display: flex;
+}
+
+#navBar1 div {
+  border: 1px solid white;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  background-color: teal;
+  color: white;
+}
+
+/* ? Case 1: changing the flex-direction based on  min and max width */
+/* @media screen and (min-width: 0px) and (max-width: 500px) {
+  #navBar1 {
+    flex-direction: column;
+  }
+} */
+
+/* ? Case 2: changing the flex-direction based on  width */
+/* @media screen and (0px <= width <= 500px) {
+  #navBar1 {
+    flex-direction: column;
+  }
+} */
+
+/* ? Case 3: changing the flex-direction based on oreintation */
+@media screen and (orientation: portrait) {
+  #navBar1 {
+    flex-direction: column;
+  }
+}

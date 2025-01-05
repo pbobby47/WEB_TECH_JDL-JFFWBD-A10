@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img[alt="burger"] {
+  position: absolute;
+  z-index: 20;
+  top: 150px;
+  left: 450px;
+}
+
+img[alt="fries"] {
+  position: absolute;
+  z-index: 5;
+  top: 94px;
+  left: 324px;
+  height: 350px;
+}
+
+img[alt="drinks"] {
+  position: absolute;
+  z-index: 1;
+  top: 11px;
+  left: 750px;
+}

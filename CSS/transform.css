@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#box {
+  height: 300px;
+  width: 300px;
+  border: solid red;
+  background-color: crimson;
+
+  /* transform: translateX(200px); */
+  /* transform: translateY(200px); */
+  /* transform: translate(200px , 200px); */
+
+  margin: 100px auto;
+  /* transform: scaleX(1.5);
+  transform: scaleX(0.1);
+  transform: scaleY(0.5);
+  transform: scale(2, 0.5);
+  transform: scale(0.7, 2); */
+
+  background-image: url(./car\ image.webp);
+  background-size: cover;
+
+  transform: skewX(0deg);
+  transform: skewY(0deg);
+  transform: skew(0deg, 0deg);
+
+  transform: rotate(45deg);
+}
+
+#box2 {
+  border: solid blue;
+  height: 250px;
+  width: 250px;
+  background-color: darkolivegreen;
+  margin: 100px auto;
+}
+
+#box2:hover {
+  transform: rotate(45deg);
+  transform: scale(1.1);
+  border-radius: 10px;
+
+  transform: scale(1.1) rotate(45deg) skew(5deg);
+}

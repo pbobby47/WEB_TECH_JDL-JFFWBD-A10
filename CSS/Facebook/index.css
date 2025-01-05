@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#mainContainer {
+  /* border: solid red; */
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: #f2f4f7;
+}
+
+#mainContainer #title_part {
+  /* border: solid blue; */
+  height: 60%;
+  width: 40%;
+  padding-top: 50px;
+}
+
+#mainContainer #title_part img {
+  width: 60%;
+}
+
+#mainContainer #title_part p {
+  font-size: 28px;
+  /* font-weight: 600; */
+  padding-left: 40px;
+  margin-top: -15px;
+}
+
+#mainContainer #form_part {
+  /* border: solid blue; */
+  height: 60%;
+  width: 30%;
+}
+
+#mainContainer #form_part form {
+  /* border: solid green; */
+  border-radius: 10px;
+  height: 90%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#mainContainer #form_part form div {
+  /* border:1px solid; */
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainContainer #form_part form div input {
+  height: 80%;
+  width: 90%;
+  font-size: 20px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+#mainContainer #form_part form div .login {
+  background-color: #0866ff;
+  width: 90%;
+  height: 80%;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+}
+
+#mainContainer #form_part form div #line {
+  border-bottom:0.15px solid gray;
+  width: 70%;
+  margin:0px 20px;
+}
+
+#mainContainer #form_part form div .newbtn{
+    border: solid;
+    font-size: 20px;
+    background-color: #3ac01fed;
+    color: white;
+    padding: 10px 23px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+#mainContainer #form_part p {
+  margin-top: 10px;
+  /* border: solid green; */
+  text-align: center;
+}
+
+footer {
+  border: solid red;
+  height: 20vh;
+}

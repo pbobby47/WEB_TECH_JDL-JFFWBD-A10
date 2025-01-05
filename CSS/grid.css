@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  height: 500px;
+  width: 800px;
+  border: solid;
+  background-color: bisque;
+
+  display: grid;
+  /* ? As its is 2 dimensional layout, intially only we have to specify how many columns and rows we need... */
+
+  grid-template-columns: 150px 150px 200px 100px 80px 100px;
+  grid-template-columns: 150px;
+  grid-template-columns: 150px 150px 150px 150px 150px;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-columns: repeat(4, auto);
+  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 2fr 1fr 3fr 2fr;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: repeat(5, auto); */
+  /* ? It will specify the no.of columns along with width of each column */
+
+  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: 1fr 0.3fr 1fr 1fr 1fr;
+  /* ? It will specify the no.of rows along with height of each row */
+
+  column-gap: 15px;
+  row-gap: 5px;
+  gap: 5px 15px;
+  gap: 10px;
+  /* ? It will specify the space b/w the grid cells */
+}
+
+#container div {
+  /* height: 100px;
+  width: 100px; */
+  border: solid;
+  background-color: chocolate;
+
+  color: white;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+#container :nth-child(1) {
+  background-color: rebeccapurple;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+#container :nth-child(2) {
+  background-color: hotpink;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+#container :nth-child(6){
+    background-color: gray;
+
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+#container :nth-child(3){
+    background-color: tomato;
+    grid-row: 3/5;
+    grid-column: 1/3;
+}
+
+#container :nth-child(4){
+    background-color: goldenrod;
+    grid-area: 3/4/5/6;
+}
+
+#container :nth-child(5){
+    background-color:crimson;
+    grid-area: 3/3/5/4;
+}

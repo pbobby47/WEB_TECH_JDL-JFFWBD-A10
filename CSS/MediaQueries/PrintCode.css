@@ -1,0 +1,5 @@
+@media print {
+  h1::after {
+    content: "Print Code";
+  }
+}

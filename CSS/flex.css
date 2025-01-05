@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    height: 500px;
+    width: 800px;
+    border: solid ;
+    background-color: bisque;
+
+    display: flex;
+    /*? It is the mandatory  property
+        By using this property, we can create a flex box.
+       where all its direct children will become the flex items.
+    */
+    
+    justify-content:start;
+    /* ? It will align flex-items horizontally
+    Values: start , center , end , space-between , space-evenly , space-around */
+
+    align-items:start;
+    /* ? It will align flex-items vertically
+    Values: start , center , end */
+
+    flex-direction: row;
+    /* ? It will specify the direction of  flex-items
+        It will decide the main axis.
+    Values: row , column , row-reverse , column-reverse */
+
+    /* flex-wrap: wrap; */
+    /* ? It will  specify the flex-items have to wrap into the next line or not 
+    Values: nowrap , wrap , wrap-reverse */
+
+    align-content: start;
+    /* ? It is mainly used as a combination of flex-wrap to specify the postion of wrapped flex-items
+    Values: start , center , end  */
+
+    row-gap: 10px;
+    column-gap: 5px;
+    gap: 10px 5px;
+    gap: 0px;
+    /* ?  It is a shorthand property of row-gap and column-gap , It will specify the gap b/w the flex-items
+    Values: row-gap-value column-gap-value
+    or Values: row&column-gap-value */
+}
+
+#container div{
+    height: 50px;
+    flex-basis: 300px;
+    flex: 1;
+    background-color: chocolate;
+    border: solid black;
+    color: white;
+    text-align: center;
+}
+
+#container :nth-child(1){
+    background-color: rebeccapurple;
+    /* flex-grow: 20; */
+}
+
+#container :nth-child(2){
+    background-color: darkgreen;
+    /* flex-grow: 100; */
+    /* flex-shrink: 20; */
+}
+
+#container :nth-child(3){
+    background-color: red;
+    /* flex-grow: 32; */
+}

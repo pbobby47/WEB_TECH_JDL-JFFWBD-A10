@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+#box {
+  height: 150px;
+  width: 150px;
+  border: solid red;
+
+  /* padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 25px; */
+
+  padding: 10px 20px 30px 40px;
+  margin: 10px 20px 30px 40px;
+
+  padding: 10px 20px 30px;
+  margin: 10px 20px 30px;
+
+  padding: 10px 20px;
+  margin: 10px 20px;
+
+  padding: 10px;
+  margin: 10px;
+}
+
+#box2 {
+  border: solid;
+}
+
+/* ! ===================== */
+.products {
+  border: 10px solid;
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  /* none , inline , block , inline-block */
+
+  margin: 10px;
+  padding: 10px;
+}
+
+/* ! ==================== */
+/* margin: auto; */
+#navContainer {
+  /* border: solid red; */
+  background-color: bisque;
+}
+
+#navContainer .navItems {
+  /* border: solid blue; */
+  display: inline-block;
+  /* margin: 20px; */
+  /* not a proper place*/
+  padding: 20px 113px;
+  background-color: bisque;
+  font-size: large;
+}
+
+#navContainer .navItems:hover {
+  background-color: chocolate;
+  color: white;
+}
+
+/* ! =========== codinglab nav bar ============ */
+/*
+1. ColorZilla - for colors 
+2. https://fontawesome.com/ - for icons
+3. cdnjs - for fontawesome link
+*/
+
+#codinglab {
+  margin-top: 50px;
+  /* border: solid red; */
+  background-color: #4170f4;
+}
+
+#codinglab div {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+  padding: 13px 51px;
+}
+
+#codinglab .extra{
+  font-size: 30px;
+}
+
+/* ! ============ codinglab_pro nav bar =========== */
+#codinglab_pro{
+  /* border: solid red; */
+  padding: 15px;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #4170f4;
+  margin-top: 50px;
+  color: white;
+}
+
+#codinglab_pro .logo{
+  /* border: solid blue; */
+  display: inline-block;
+  font-size: 30px;
+}
+
+#codinglab_pro .options{
+  /* border: solid blue; */
+  display: inline-block;
+  margin-left: 208px;
+}
+
+#codinglab_pro .options div{
+  /* border: solid green; */
+  display: inline-block;
+  padding: 0px 30px;
+}
+
+#codinglab_pro .options div:hover{
+  text-decoration: underline;
+  /* color: red; */
+}
+
+#codinglab_pro .icons{
+  /* border: solid blue; */
+  display: inline-block;
+  margin-left: 230px;
+}
+
+#codinglab_pro .icons i{
+  padding: 0px 10px;
+  font-size: 30px;
+}
+
+#codinglab_pro .icons i:hover{
+  color: black;
+}
+

@@ -1,0 +1,30 @@
+/* ! Combinator Selectors */
+/* 
+? 1. Descendent :
+The symbol used is space.
+It will target all the descendents.
+It will target all the children , grand children , great grand children , so on.
+
+? 2. Direct Child :
+The symbol used is >.
+It will target only the direct children.
+*/
+
+/* article>aside {
+  color: red;
+} */
+
+/* 
+? 3. Adjacent - sibling: 
+It will ony one element which is acting as sibling.
+It will only after elements not before.
+
+? 3. General - sibling: 
+It will ony all elements which are acting as siblings.
+It will only after elements not before.
+*/
+
+section ~ aside {
+  color: white;
+  background-color: blue;
+}

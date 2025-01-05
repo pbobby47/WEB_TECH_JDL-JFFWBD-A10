@@ -1,0 +1,36 @@
+#container {
+  height: 300px;
+  width: 300px;
+  border: solid;
+
+  background-color: bisque;
+
+  background-image: url("https://cdn.pixabay.com/photo/2023/04/10/15/56/bowl-7914112_640.jpg");
+
+  background-repeat: no-repeat;
+  /* repeat , no-repeat , repeact-x , repeat-y */
+
+  /*? background-position: background-position-x background-position-y; */
+
+  background-position-x: center;
+  /* left , center , right */
+
+  background-position-y: center;
+  /* top , center , bottom */
+
+  background-position: center center;
+  background-position: center;
+
+  background-size: cover;
+}
+
+body {
+  background: url("https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_640.jpg")
+    no-repeat;
+
+  background-size: cover; /*! background-size should not be used in short hand property */
+  text-align: justify;
+
+  color: rgba(255, 255, 255, 1);
+  background-attachment: fixed;
+}

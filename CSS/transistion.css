@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#box {
+  height: 300px;
+  width: 300px;
+  border: solid;
+  background-color: crimson;
+}
+
+#box:hover {
+  border-radius: 50%;
+  height: 350px;
+  width: 600px;
+  border: dashed purple;
+  background-color: midnightblue;
+  /* transform: rotate(360deg); */
+
+  /*? transition: transition-property transition-duration transition-delay transition-timing-function; */
+
+  transition-property: all;
+  transition-duration: 10s;
+  transition-delay: 0.5s;
+  transition-timing-function: ;
+
+  transition: width 10s 0.5s;
+}
+
+/* 
+! transition:
+ Shorthand property combines four of the transition properties into a single property.
+? 1. transition-property:
+Specifies the name of the CSS property to which the transition is applied.
+? 2. transition-duration:
+Specifies how long the transition should take.
+? 3. transition-delay:
+Defines when the transition will start. It allows a transition to begin execution some period of time from when it is applied.
+? 4. transition-timing-function:
+Specifies the speed of transition
+*/
+
+button{
+    height: 50px;
+    width: 500px;
+}
+
+button:hover{
+    width: 100px;
+
+    transition-duration: 5s;
+    transition-timing-function: ease-in-out;
+    /* linear - it will constant speed
+     ease-in - it will start slow , then fast 
+     ease-out  - it will start fast then it will become slow
+     ease-in-out - it will start slow, normal, end slow, 
+     ease - it will start slow , faste , end slow
+     steps  - it will apply step by step,
+     cubic */
+
+     /*! https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function */
+}

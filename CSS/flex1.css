@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#firstNavBar {
+  border: solid;
+  display: flex;
+}
+
+#firstNavBar div {
+  border: solid blue;
+  height: 100px;
+  flex-basis: 200px;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

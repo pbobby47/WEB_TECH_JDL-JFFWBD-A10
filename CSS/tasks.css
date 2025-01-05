@@ -1,0 +1,54 @@
+#heading {
+  color: white !important;
+  background-color: rgb(41, 96, 59) !important;
+}
+
+#firstTable tr:nth-child(odd) {
+  font-weight: bold;
+  color: rgb(41, 96, 59);
+  background-color: rgba(128, 128, 128, 0.208);
+}
+
+#firstTable tr:hover {
+  background-color: rgb(197, 185, 185);
+}
+
+/* ! 2nd Table */
+#secondTable tr:first-child {
+  color: white !important;
+  background-color: rgb(89, 11, 199) !important;
+}
+
+#secondTable tr:first-child td {
+  color: white !important;
+  background-color: rgb(89, 11, 199) !important;
+}
+
+#secondTable tr td:nth-child(odd) {
+  background-color: rgba(128, 128, 128, 0.097);
+}
+
+#secondTable tr td button {
+  color: white;
+  background-color: rgb(89, 11, 199);
+}
+/* ! chess box */
+#chessBox tr:nth-child(odd) td:nth-child(odd) {
+  background-color: bisque;
+}
+
+#chessBox tr:nth-child(odd) td:nth-child(even) {
+  background-color: chocolate;
+}
+
+#chessBox tr:nth-child(even) td:nth-child(odd) {
+  background-color: chocolate;
+}
+
+#chessBox tr:nth-child(even) td:nth-child(even) {
+  background-color: bisque;
+}
+
+#chessBox tr td:hover{
+    background-color: rgb(185, 107, 47) !important;
+}

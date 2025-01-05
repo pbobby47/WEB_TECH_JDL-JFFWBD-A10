@@ -1,0 +1,100 @@
+/* ! SIMPLE SELECTORS */
+/* ? 1. Tag Name : */
+/*
+h1 {
+  color: white;
+  background-color: teal;
+}
+
+h2 {
+  color: white;
+  background-color: teal;
+}
+
+h3 {
+  color: white;
+  background-color: teal;
+}
+
+p {
+  color: white;
+  background-color: teal;
+}
+
+div {
+  color: white;
+  background-color: teal;
+}
+
+b {
+  color: white;
+  background-color: teal;
+}
+
+i {
+  color: white;
+  background-color: teal;
+}
+
+u {
+  color: white;
+  background-color: teal;
+}
+*/
+
+/* ? 2. Grouping(,) */
+/*
+h1 , h2 , h3 , div , p , b , i , u {
+    color: white;
+    background-color: teal;
+}*/
+
+/* ? 2. Universal (*) */
+/* body , h1 , h2 , h3 , div , p , b , i , u {
+    color: white;
+    background-color: teal;
+} */
+
+/* 
+* {
+    color: white;
+    background-color: teal;
+} */
+
+/* ? 4. Id name */
+/* #demo{
+    color: white;
+    background-color: teal;
+}
+
+#demo2{
+    color: white;
+    background-color: teal;
+} */
+
+/* ? 5. Class Name */
+.demo {
+  color: white;
+  background-color: teal;
+}
+
+.demo1 {
+  color: black;
+  background-color: yellow;
+}
+
+.demo2 {
+  color: red;
+  background-color:bisque;
+}
+
+.demo3 {
+  color: blue;
+  background-color:bisque;
+}
+
+.demo4{
+    color: purple;
+    background-color: gray;
+}
+

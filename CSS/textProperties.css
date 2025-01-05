@@ -1,0 +1,48 @@
+/* 
+! Text Properties:
+*/
+
+p {
+  color: blue;
+  text-align: left;
+  /* It will specify where to align the content in a webpage */
+  /* start , center , end , justify , left , right */
+
+  text-transform: capitalize;
+  /* normal(d) , lowercase , uppercase , capitalize  */
+
+  /* ? text-decoration:text-decoration-line text-decoration-style text-decoration-color ; */
+
+  /* text-decoration-line: underline; */
+  /* underline , overline , line-through */
+
+  /* text-decoration-style: double; */
+  /* solid(d) , dotted , dashed , double , wavy */
+
+  /* text-decoration-color: brown; */
+  /* any color (assigned color /  black) */
+
+  text-decoration: underline overline rebeccapurple;
+
+  text-indent: 50px;
+  /* Any value */
+
+  text-wrap: wrap;
+  /* it will specify to wrap the content to next line or not */
+  /* values : wrap(d) , nowrap */
+
+  letter-spacing: 2px;
+
+  word-spacing: 50px;
+
+  line-height: 30px;
+}
+
+div{
+    line-height: 50px;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 4px 3px 5px gray;
+}

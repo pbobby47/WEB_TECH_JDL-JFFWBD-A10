@@ -1,0 +1,58 @@
+h1 {
+  color: red;
+}
+p {
+  color: blue;
+}
+
+/* ! =========== case 1 (media type) ============== */
+/* 
+@media screen {
+  h1 {
+    color: blueviolet;
+  }
+  p {
+    color: darkgreen;
+  }
+} */
+
+@media print {
+  h1 {
+    color: black;
+    text-align: center;
+  }
+  p {
+    color: black;
+  }
+}
+
+/* ! =========== case 2 (media features and media operator) ============== */
+@media screen and (min-width: 800px) and (max-width: 1600px) {
+  body {
+    background-color: teal;
+  }
+  h1::after {
+    content: ": Laptop Mode";
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  body {
+    background-color: bisque;
+  }
+  h1::after {
+    content: ": Tablet Mode";
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  body {
+    background-color: brown;
+  }
+  h1 {
+    color: white;
+  }
+  h1::after {
+    content: ": Mobile Mode";
+  }
+}

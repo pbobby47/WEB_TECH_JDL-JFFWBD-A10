@@ -1,0 +1,26 @@
+/* ! 
+! COLORS:
+    1. color Name
+    2. RGB
+    3. RGBA
+    4. HEX
+    5. HSL
+    6. HSLA
+*/
+
+body {
+  background-color: blue;
+
+  background-color: rgb(0, 0, 255);
+
+  background-color: rgba(0, 0, 255, 1);
+
+  background-color: #0000ff;
+
+  background-color: #00f;
+
+  background-color: hsl(240, 100%, 50%);
+
+  background-color: hsla(240, 100%, 50%, 1);
+
+}
