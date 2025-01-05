@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+    1. action ==>  will specify where to receive the data. 
+        If we not specified any path it will the original path only.
+    2. method ==> It will specify the way of displaying the data.
+        a. get -- It will display at URL place.
+            It is not secured.
+        b. post -- It will store at backend.
+            It is secured.
+    -->
+    
+    <form action="./functionality.html" method="get" novalidate autocomplete="off" target="_blank">
+        <input type="text" name="userName" placeholder="Enter Your Name"> 
+        <br> <br>
+
+        <input type="email" name="userEmail" placeholder="Enter Your Email" required > <br> <br>
+        
+        <input type="password" name="userPwd" placeholder="Enter Your Password" required> 
+        <br> <br>
+        
+        <button>Submit</button>
+    </form>
+    
+</body>
+</html>

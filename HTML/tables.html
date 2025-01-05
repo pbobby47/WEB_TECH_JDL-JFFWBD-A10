@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ! TABLES: 
+    ? tags:
+        1. table ==> It will define the creation of a table.
+        2. tr ==> defines the table row.
+        3. td ==> defines the table data.
+        4. th ==> defines the table heading.
+        5. thead ==> to group the header cells.
+        6. tbody ==> to group the body cells.
+        7. tfoot ==> to group footer cells.
+        8. caption ==> to provide the title to the table.
+    ? Attributes: 
+        1. border ==> defines the border of the table along the with of border.
+        2. cellspacing ==> It will specify the space b/w the cells.
+        3. cellpadding ==> It will specify the space b/w the cell border and content.
+        4. rowspan ==> To merge the cells over rows
+        5. colspan ==> To merge the cells over columns
+    -->
+    
+    <!-- <p>Students Table</p> -->
+    <table border="1" cellspacing="0" cellpadding="15">
+        <caption>Students Table</caption>
+        <thead style="background-color: chocolate;color: white;">
+        <tr>
+            <th>S.NO</th>
+            <th colspan="2">Details</th>
+            <!-- <th>Details</th> -->
+        </tr>
+        </thead>
+        <tbody style="background-color: bisque;">
+        <tr>
+            <td>1</td>
+            <td>Rishi</td>
+            <td>BCA</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Parsa</td>
+            <td rowspan="2">B.Tech</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Harsh</td>
+            <!-- <td>B.Tech</td> -->
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>RajiniKanth 🔥🔥🔥</td>
+            <td>BCA</td>
+        </tr>
+        </tbody>
+        <tfoot style="background-color: darkcyan;text-align: center;color: white;">
+            <tr>
+                <td colspan="3">Contact US:  <a href="tel:9876541300">+9876541300</a> </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

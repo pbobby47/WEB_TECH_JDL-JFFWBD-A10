@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+        <label for="empName">Name : </label>
+        <input name="userName" type="text" value="Random Name" id="empName" placeholder="Enter Your Name"> <br> <br>
+
+        <label  for="empEmail">Email : </label>
+        <input name="userEmail" type="email" id="empEmail" autofocus autocomplete="off" required placeholder="Enter Your Email"> <br> <br>
+
+        <label for="empAge">Age : </label>
+        <input name="userAge" type="number" id="empAge"> <br> <br>
+
+        <label for="empNo">Mobile No : </label>
+        <input name="userNo" type="tel" id="empNo" autofocus required> <br> <br>
+
+        <label for="">Gender : </label>
+        <input type="radio" name="userGender" value="male"> Male
+        <input type="radio" name="userGender" value="female"> female
+        <input type="radio" name="userGender" value="others"> Others <br> <br>
+         </fieldset>
+
+        <fieldset>
+            <legend>Educational Details</legend>
+         <label for="">Skills : </label>
+        <input type="checkbox" name="userSkills" value="html">HTML
+        <input type="checkbox" name="userSkills" value="css">CSS
+        <input type="checkbox" name="userSkills" value="js">JavaScript
+        <input type="checkbox" name="userSkills" value="reactjs">React JS <br> <br>
+
+        <label for="">Skills : </label>
+        <select name="empSkills" multiple>
+            <option value="noskills">None</option>
+            <option value="basic">HTML</option>
+            <option value="intermediate">CSS</option>
+            <option value="advance">JavaScript</option>
+            <option value="pro">React JS</option>
+        </select> <br> <br>
+
+        <label for="">Skills : </label>
+        <select name="masterSkils">
+            <optgroup label="frontend">
+                <option value="">HTML</option>
+                <option value="">CSS</option>
+                <option value="">JavaScript</option>
+                <option value="">TailwindCSS</option>
+                <option value="">ReactJS</option>
+            </optgroup>
+
+            <optgroup label="database">
+                <option value="">SQL</option>
+                <option value="">MongoDB</option>
+                <option value="">NoSQL</option>
+                <option value="">PLSQL</option>
+                <option value="">JSON</option>
+            </optgroup>
+
+            <optgroup label="backend">
+                <option value="">Java</option>
+                <option value="">Python</option>
+                <option value="">JavaScript(NodeJS)</option>
+                <option value="">C++</option>
+            </optgroup>
+            
+            <optgroup label="services" >
+                <option value="">AWS</option>
+                <option value="">Azure</option>
+                <option value="">SalesForce</option>
+            </optgroup>
+
+        </select> <br> <br>
+
+        <!-- Value should be same as content -->
+        <label for="">Skills_Using_datalist : </label>
+        <input list="skillsList">
+        <datalist id="skillsList">
+            <option value="None">None</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React JS">React JS</option>
+        </datalist>
+         <br> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Reviews</legend>
+        <label for="">Comments : </label>
+        <textarea name="" id="" rows="15" cols="60"></textarea> <br> <br>
+
+        <label for="">Feedback : </label>
+        <textarea name="" id="" rows="5" cols="70"></textarea> <br> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Type Attribute Values:</legend>
+            <input type="text"> <br>
+            <input type="email"> <br>
+            Password : <input type="password"> <br>
+            <input type="number"> <br>
+            <input type="tel"> <br>
+            <input type="radio">Male <br>
+            <input type="checkbox">html <br>
+            
+            <input type="date"> <br>
+            <input type="time"> <br>    
+            <input type="week"> <br>    
+            <input type="month"> <br>    
+            <input type="datetime-local"> <br>
+            
+            <input type="button" value="button"> <br>
+            <input type="submit" value="submit"> <br>
+            <input type="reset" value="Reset"> <br>
+
+            <input type="image" src="./Images/meesho.jpeg"> <br>
+            <input type="url"> <br>
+            <input type="color" name="color"> <br>
+            <input type="search"> <br>
+            <input type="file"> <br>
+            <input type="range" name="rangeValue"> <br>
+            <input type="range" name="rangeValue" min="0" max="10"> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>input tag Attributes</legend>
+
+            <input type="text" > <br>
+            <input type="text" name="containerName" > <br>
+            <input type="text" name="containerName" value="defaultValue"> <br>
+            Age : <input type="number" min="18" max="40" step="5"> <br>
+            Name : <input type="text" minlength="5" maxlength="8"> <br>
+            Name : <input type="text" size="20"> <br>
+            Name : <input type="text" size="60"> <br>
+            CompanyName : <input type="text" value="TCS" readonly> <br>
+            CompanyName : <input type="text" value="TCS" disabled> <br>
+        </fieldset>
+
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</body>
+</html>
