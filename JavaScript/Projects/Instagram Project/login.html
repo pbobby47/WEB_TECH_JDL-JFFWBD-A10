@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <fieldset>
+        <legend>Login Form</legend>
+        <input type="text" name="userEmail" placeholder="Enter your Email" required/>
+        <br />
+        <br />
+        <input type="text" name="userPwd" placeholder="Enter your Password" required/>
+        <br />
+        <br />
+        <button type="submit">Login</button>
+      </fieldset>
+    </form>
+
+    <script>
+      let myForm = document.getElementById("myForm");
+
+      myForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        // current data
+        let userEmail = document.getElementsByName("userEmail")[0];
+        let userPwd = document.getElementsByName("userPwd")[0];
+
+        console.log(userEmail); // one element
+        console.log(userEmail.name);
+        console.log(userEmail.value);
+
+        console.log(userPwd);
+        console.log(userPwd.name);
+        console.log(userPwd.value);
+
+        // localstorage data
+        let user_email = localStorage.getItem("userEmail");
+        let user_pwd = localStorage.getItem("userPwd");
+        console.log(user_email);
+        console.log(user_pwd);
+
+        // comparing current data with localstorage data
+        if (userEmail.value === user_email && userPwd.value === user_pwd) {
+          alert("You have successfully login..✅✅✅");
+          window.open("./HomePage.html");
+          
+        } else if (userEmail.value === user_email) {
+          alert("Invalid Password");
+        } else if (userPwd.value === user_pwd) {
+          alert("Invalid Email");
+        } else {
+          alert("Invalid Crendentials Something went wrong!!!");
+        }
+      });
+    </script>
+  </body>
+</html>
