@@ -1,0 +1,27 @@
+[
+  {
+    "video_url": "./Videos/ANIMAL_ ABRAR’S ENTRY - JAMAL KUDU(Full Video) _Ranbir Kapoor,Bobby Deol _Sandeep Vanga _Bhushan K.mp4",
+    "video_title": "JAMAL KUDU(Full Video)",
+    "video_thumbnail": "./Images/Jamal kudu.jfif"
+  },
+  {
+    "video_url": "./Videos/ANIMAL_ ARJAN VAILLY _ Ranbir Kapoor _ Sandeep Vanga _ Bhupinder B, Manan B _ Bhushan K.mp4",
+    "video_title": "ANIMAL_ ARJAN VAILLY",
+    "video_thumbnail": "./Images/Arjan vaillly.jfif"
+  },
+  {
+    "video_url": "./Videos/Fighter - Teaser _ Hrithik Roshan _ Deepika Padukone _ Anil Kapoor _ Siddharth Anand _ 25 Jan 2024.mp4",
+    "video_title": "Fighter - Teaser",
+    "video_thumbnail": "./Images/fighter.jfif"
+  },
+  {
+    "video_url": "./Videos/Kanguva - Glimpse _ Suriya, Disha Patani _ Devi Sri Prasad _ Siva _ Studio Green _ UV Creations.mp4",
+    "video_title": "JKanguva - Glimpse",
+    "video_thumbnail": "./Images/Kanguva.jpg"
+  },
+  {
+    "video_url": "./Videos/Salaar Teaser _ Prabhas, Prashanth Neel, Prithviraj, Shruthi Haasan, Hombale Films, Vijay Kiragandur.mp4",
+    "video_title": "Salaar Teaser",
+    "video_thumbnail": "./Images/Salar.jpg"
+  }
+]

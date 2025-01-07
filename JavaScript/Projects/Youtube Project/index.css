@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#mainContainer {
+  /* border: 10px solid red; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#mainContainer #playBox {
+  /* border: solid blue; */
+  height: 60%;
+  width: 60%;
+
+  video {
+    width: 100%;
+  }
+}
+
+#mainContainer #playList {
+  /* border: solid blue; */
+  height: 70%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+
+  main{
+    border: solid grey;
+    text-align: center;
+
+    img{
+        width: 100%;
+    }
+  }
+}
