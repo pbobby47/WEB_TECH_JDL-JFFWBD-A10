@@ -155,11 +155,11 @@ let getChannelIcon = async video_data => {
   console.log(video_data);
   console.log(channelIcon);
 
-  appendVidesInToContainer(video_data, channelIcon);
+  appendVideosInToContainer(video_data, channelIcon);
 };
 
 // to create videos
-let appendVidesInToContainer = (video_data, channelIcon) => {
+let appendVideosInToContainer = (video_data, channelIcon) => {
   let main_content = document.getElementById("main_content");
 
   main_content.innerHTML += `
