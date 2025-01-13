@@ -95,16 +95,15 @@ toggleButton.addEventListener("click", () => {
 
 // REFERENCE LINK: https://developers.google.com/youtube/v3/docs/search
 
-// const API_KEY = "AIzaSyChL3R4VdC639_f-9RPDCSvSYVVns-PRQA"; //! DON'T USE THIS
-const API_KEY = "AIzaSyC40f8_wSV1XpxKb-h8vNDh2hQ1bIlfq4c "; //! DON'T USE THIS
+const API_KEY = "PASTE_YOUR_OWN_API_KEY";
 const SEARCH_HTTP = "https://www.googleapis.com/youtube/v3/search?"; // remember "?"" symbol
 const CHANNEL_HTTP = "https://www.googleapis.com/youtube/v3/channels?";
 
-let CallYoutubeDataAPI = async () => {
+let CallYoutubeDataAPI = async query => {
   let search_params = new URLSearchParams({
     key: API_KEY, // M
     part: "snippet", // M
-    q: "JavaScript", // M
+    q: query, // M
     maxResults: 50,
     type: "video",
     regionCode: "IN",
@@ -160,8 +159,6 @@ let getChannelIcon = async video_data => {
 
 // to create videos
 let appendVideosInToContainer = (video_data, channelIcon) => {
-  let main_content = document.getElementById("main_content");
-
   main_content.innerHTML += `
     <a href="https://www.youtube.com/watch?v=${video_data.id.videoId}">
     
@@ -183,8 +180,19 @@ let appendVideosInToContainer = (video_data, channelIcon) => {
         </main>  
 
     </a>
-    
     `;
 };
 
-CallYoutubeDataAPI();
+let main_content = document.getElementById("main_content");
+let search_button = document.getElementById("search_button");
+// console.log(search_button);
+
+search_button.addEventListener("click", () => {
+  console.log("event triggered");
+
+  let user_input = document.getElementById("user_input").value;
+  console.log("You made a request  for", user_input, "data");
+  main_content.innerHTML = "";
+
+  CallYoutubeDataAPI(user_input);
+});
