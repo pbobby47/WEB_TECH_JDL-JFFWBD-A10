@@ -1,12 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+      .word-spacing-10{
+        word-spacing: 10px;
+      }
+      .word-spacing-50{
+        word-spacing: 50px;
+      }
+    </style>
+
+  </head>
+  <body>
     <!-- ! Text Properties -->
     <!-- ? color -->
     <!-- syntax: text-color-number -->
@@ -23,7 +32,7 @@
     <p class="text-[#000]">Welcome to Tailwind css Class</p>
     <p class="text-[#133]">Welcome to Tailwind css Class</p>
     <p class="text-[#abc]">Welcome to Tailwind css Class</p>
-    
+
     <!-- ? text-align -->
     <!-- syntax: text-value -->
     <p class="text-start">I am the content aligned to start</p>
@@ -31,14 +40,43 @@
     <p class="text-center">I am the content aligned to center</p>
     <p class="text-end">I am the content aligned to end</p>
     <p class="text-right">I am the content aligned to right</p>
-    <p class="text-justify hover:text-center">I am the content aligned to justify Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum molestias perferendis modi ad eveniet voluptates illum quos voluptatem aliquam! Omnis quis unde id qui culpa pariatur, quo dolorum porro officia. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla cumque quibusdam consectetur aliquam iure tenetur dolore modi saepe error tempora, non quasi alias dolorum, ad veritatis quis illo unde commodi? Neque rem hic quidem tempore adipisci sint, quia quos beatae maiores? Obcaecati libero enim quibusdam at natus quisquam voluptate aspernatur?</p>
-    <p class="text-left text-blue-600 md:text-center md:text-red-700 lg:text-end lg:text-teal-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quasi id, dolorum eaque ipsum, consequuntur corrupti quisquam inventore quis non ducimus numquam ad amet eos accusamus nisi maiores saepe. Saepe impedit necessitatibus aperiam asperiores. Quod impedit, mollitia reprehenderit neque accusamus quasi error, ipsum dolores sunt corrupti reiciendis possimus, dicta esse qui voluptatibus adipisci quis praesentium dolorem! Aut aspernatur nam adipisci molestiae ut sed? Corporis maiores quis repudiandae temporibus similique officia error ratione nam. Eum fugiat tenetur fugit consectetur consequuntur? Quam possimus voluptatem soluta quisquam quas fuga architecto iusto ratione aspernatur facere, perspiciatis excepturi fugit maiores veniam? Iure amet molestiae reprehenderit.</p>
+    <p class="text-justify hover:text-center">
+      I am the content aligned to justify Lorem, ipsum dolor sit amet
+      consectetur adipisicing elit. Rerum molestias perferendis modi ad eveniet
+      voluptates illum quos voluptatem aliquam! Omnis quis unde id qui culpa
+      pariatur, quo dolorum porro officia. Lorem, ipsum dolor sit amet
+      consectetur adipisicing elit. Nulla cumque quibusdam consectetur aliquam
+      iure tenetur dolore modi saepe error tempora, non quasi alias dolorum, ad
+      veritatis quis illo unde commodi? Neque rem hic quidem tempore adipisci
+      sint, quia quos beatae maiores? Obcaecati libero enim quibusdam at natus
+      quisquam voluptate aspernatur?
+    </p>
+    <p
+      class="text-left text-blue-600 md:text-center md:text-red-700 lg:text-end lg:text-teal-500"
+    >
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quasi id,
+      dolorum eaque ipsum, consequuntur corrupti quisquam inventore quis non
+      ducimus numquam ad amet eos accusamus nisi maiores saepe. Saepe impedit
+      necessitatibus aperiam asperiores. Quod impedit, mollitia reprehenderit
+      neque accusamus quasi error, ipsum dolores sunt corrupti reiciendis
+      possimus, dicta esse qui voluptatibus adipisci quis praesentium dolorem!
+      Aut aspernatur nam adipisci molestiae ut sed? Corporis maiores quis
+      repudiandae temporibus similique officia error ratione nam. Eum fugiat
+      tenetur fugit consectetur consequuntur? Quam possimus voluptatem soluta
+      quisquam quas fuga architecto iusto ratione aspernatur facere,
+      perspiciatis excepturi fugit maiores veniam? Iure amet molestiae
+      reprehenderit.
+    </p>
 
     <!-- ? text-decoration-line -->
     <p>Welcome to <span class="underline">Tailwind</span> CSS Class</p>
     <p>Welcome to <span class="overline">Tailwind</span> CSS Class</p>
     <p>Welcome to <span class="line-through">Tailwind</span> CSS Class</p>
-    <p>Welcome to <a href="https://tailwindcss.com/" class="no-underline">Tailwind</a> CSS Class</p>
+    <p>
+      Welcome to
+      <a href="https://tailwindcss.com/" class="no-underline">Tailwind</a> CSS
+      Class
+    </p>
     <p>Welcome to Tailwind CSS Class</p>
 
     <!-- text-decoration-color -->
@@ -50,12 +88,14 @@
     <!-- text-shadow -->
     <!-- letter-spacing -->
     <!-- word-spacing -->
+    <p>Welcome To tailwindcss Class</p>
+    <p class="word-spacing-50">Welcome To tailwindcss Class</p>
+    <p class="[word-spacing:50px]">Welcome To tailwindcss Class</p>
+    <!-- css ways , customise , arbitary -->
 
     <!-- font-size -->
     <!-- font-style -->
     <!-- font-family -->
     <!-- font-variant -->
-
-
-</body>
+  </body>
 </html>
