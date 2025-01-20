@@ -1,0 +1,12 @@
+https://bellroy.com/
+
+https://kamyafoods.com/
+
+
+
+how to get templates ???
+
+
+level 1 ---> utilities (class names)
+level 2 ---> components (block of code)
+level 3 ---> templates (entire website code)
