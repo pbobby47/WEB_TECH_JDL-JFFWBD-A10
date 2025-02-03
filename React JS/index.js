@@ -1,131 +1,122 @@
-// ! ========== Modules ===============
-/*! 
-Modules are used to breakdown the large amount of code into smaller peices.
-Code Reusability is more, we can use any files.
-Modules are classified into 2 ways:
-    1. default
-    2. named
+/*
+Modules are used to break large amount of code into smaller pieces.
+We have 2 types of exports
+        1. default export
+        2. named export
 
-// ? Default:
-1. We cannot export more than one default data.
-2. To Export:
-    export default variableName;
-3. To import:
-    import variableName from "path address";
-4. While import we can call the data with any name.
-5. From the same module we can import n no.of times into n.of diffrent variables.
+? 1. Default:
+At a time we can able export only one default.
+While importing we can call with any variable name
 
-// ? Named:
-
+? 2. Named:
+If we want to export more than one we perfer this way.
+While importin we have to keep our variables in expression.
 */
 
-// ! ====== Default Import ======
-// Syntax: To import default data ----> import anyVariableName from "pathaddress";
+// ! ======== importing File ==========
+//  ! ==== Default Import ====
+// import sname from "./code.js";
+// console.log(sname);
 
-// import a from "./demo.js";
-// import b from "./demo.js";
-// import c from "./demo.js";
-// import d from "./demo.js";
-// import e from "./demo.js";
+// import sid from "./code.js";
+// console.log(sid);
 
-// console.log(a);
-// console.log(b);
-// console.log(c);
-// console.log(d);
-// console.log(e);
+// import skills from "./code.js";
+// console.log(skills);
 
-// import data from "./demo.js";
+// import data from "./code.js";
 // console.log(data);
 
-// ! ============== Named Import ================
-// Syntax: we have to use an expression
-
+//  ! ==== Named Import ====
 // ? Case 1:
 /*
-import { product2 } from "./demo.js";
-console.log(product2);
+import { product2 } from "./code.js";
+import { product5 } from "./code.js";
 
-import { product5 } from "./demo.js";
-console.log(product5);
+console.log(product2); // cars
+console.log(product5); // petrol
 */
 
 // ? Case 2:
 /*
-import { product2, product3, product5 } from "./demo.js";
+import { product2 } from "./code.js";
+import { product5 } from "./code.js";
 
-console.log(product2);
-console.log(product3);
-console.log(product5);
+console.log(product2); // cars
+console.log(product5); // petrol
 */
 
 // ? Case 3:
 /*
-import { addition, subtraction, multiplication, division } from "./demo.js";
+import { product1, product2, product3, product4, product5 } from "./code.js";
 
-console.log(addition);
-console.log(addition(10, 20));
-console.log(addition(5, 2));
-
-console.log(subtraction);
-console.log(subtraction(20, 10));
-console.log(subtraction(-50, 10));
-
-console.log(multiplication);
-console.log(multiplication(2, 5));
-console.log(multiplication(10, 15));
-
-console.log(division);
-console.log(division(5, 2));
-console.log(division(10, 5));
+console.log(product1);
+console.log(product2);
+console.log(product3);
+console.log(product4);
+console.log(product5);
 */
 
 // ? Case 4:
 /*
-import { add, sub, multiply, divide } from "./demo.js";
+import { addition, subtraction, multiplication, division } from "./code.js";
+
+function sum(a, b) {
+  return a + b;
+}
+console.log(sum);
+console.log(sum(10, 20));
+
+console.log(addition);
+console.log(addition(10, 20));
+
+console.log(subtraction);
+console.log(subtraction);
+
+console.log(multiplication);
+console.log(division);
+*/
+
+// ? Case 5:
+/*
+import { add, sub, multiply, divide } from "./code.js";
 
 console.log(add);
-console.log(add(10, 20));
-console.log(add(5, 2));
-
 console.log(sub);
-console.log(sub(10, 20));
-
 console.log(multiply);
-console.log(multiply(4, 5));
-
 console.log(divide);
-console.log(divide(40, 2));
 */
 
-// ? Case 4.1:
+// ? Case 5.1:
+// Passing alias name while importing
 /*
-import { add as a, sub as b, multiply as c, divide as d } from "./demo.js";
+import {
+  add as shivani,
+  sub as deepak,
+  multiply as tanmay,
+  divide as keshav,
+} from "./code.js";
 
-console.log(a);
-console.log(a(10, 20));
-console.log(a(5, 2));
-
-console.log(b);
-console.log(b(10, 20));
-
-console.log(c);
-console.log(c(4, 5));
-
-console.log(d);
-console.log(d(40, 2));
+console.log(shivani);
+console.log(shivani(10, 20));
+console.log(deepak);
+console.log(deepak(10, 20));
+console.log(tanmay);
+console.log(tanmay(5, 5));
+console.log(keshav);
+console.log(keshav(9, 3));
 */
 
-// ? Case 4.2:
-import * as allFunctions from "./demo.js";
+// ? Case 5.2:
+import * as allFunctions from "./code.js";
 
 console.log(allFunctions);
-console.log(typeof allFunctions);
 
 console.log(allFunctions.add);
 console.log(allFunctions.add(10, 20));
+console.log(allFunctions["add"]);
 console.log(allFunctions["add"](10, 20));
 
 console.log(allFunctions.sub);
 console.log(allFunctions.multiply);
 console.log(allFunctions.divide);
-console.log(allFunctions.default);
