@@ -218,6 +218,7 @@ export default ChildComponent;
 */
 
 // ? ========= prop types ==============
+/*
 import PropTypes from "prop-types";
 
 let ChildComponent = props => {
@@ -248,3 +249,42 @@ ChildComponent.propTypes = {
 };
 
 export default ChildComponent;
+*/
+
+// ! ================ Task on Components , Props , CSS =================
+
+import style from "./meeshoTask.module.css";
+
+let Product = props => {
+  console.log(props);
+  let { category, data } = props;
+  return (
+    <>
+      <h2>{category}</h2>
+
+      <section id={style.productsContainer}>
+        {data.map((val, ind) => {
+          console.log(ind, "----", val);
+
+          return (
+            <article className={style.product}>
+              <div id={style.imagePart}>
+                <img src={val.image} alt="" />
+              </div>
+              <div id={style.infoPart}>
+                <div>{val.title}</div>
+                <div>{val.price}</div>
+                <div>free delivery</div>
+                <div>
+                  <span>{val.ratings}</span>
+                  <span>{val.reviews}</span>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+    </>
+  );
+};
+export default Product;

@@ -750,8 +750,8 @@ let App = () => {
 export default App;
 */
 
-// ? =========  prop types ==============
-
+// ? ========= prop types ==============
+/*
 import ChildComponent from "./ChildComponent";
 let App = () => {
   return (
@@ -772,4 +772,154 @@ let App = () => {
     </>
   );
 };
+export default App;
+*/
+
+// ! ======================= CSS =======================
+
+// ? 1 . ===== INLINE CSS ======
+/*
+1. Inline css is similar to traditional inline css but the only difference is it accepts objects as a value.
+2. css properties will follows lower camel case conventions.
+*/
+
+// & Case 1:
+/*
+let App = () => {
+  return (
+    <>
+      <h1 style={{ textAlign: "center", color: "blue" }}>
+        I am App Component - Inline CSS
+      </h1>
+      <section
+        style={{
+          border: "2px solid",
+          display: "flex",
+          justifyContent: "space-evenly",
+          backgroundColor: "teal",
+          color: "white",
+        }}
+      >
+        <div style={{ border: "solid white", flex: 1, padding:"10px", textAlign:"center" }}>Home</div>
+        <div style={{ border: "solid white", flex: 1, padding:"10px", textAlign:"center" }}>About</div>
+        <div style={{ border: "solid white", flex: 1, padding:"10px", textAlign:"center" }}>Contact</div>
+        <div style={{ border: "solid white", flex: 1, padding:"10px", textAlign:"center" }}>Services</div>
+        <div style={{ border: "solid white", flex: 1, padding:"10px", textAlign:"center" }}>Login</div>
+      </section>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// & Case 2:
+/*
+let App = () => {
+  let sectionStyles = {
+    border: "2px solid",
+    display: "flex",
+    justifyContent: "space-evenly",
+    backgroundColor: "teal",
+    color: "white",
+  };
+
+  let divStyles = {
+    border: "solid white",
+    flex: 1,
+    padding: "10px",
+    textAlign: "center",
+  };
+
+  return (
+    <>
+      <h1 style={{ textAlign: "center", color: "blue" }}>
+        I am App Component - Inline CSS
+      </h1>
+      <section style={sectionStyles}>
+        <div style={divStyles}>Home</div>
+        <div style={divStyles}>About</div>
+        <div style={divStyles}>Contact</div>
+        <div style={divStyles}>Services</div>
+        <div style={divStyles}>Login</div>
+      </section>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? ====== MODULE CSS ======
+/*
+1. we have to create a file like filename.module.css 
+2. import into the component
+3. for elements css properties will apply directly
+    to assign id names / class names we have to use  variable name which we imported with.
+*/
+/*
+import style from "./mycode.module.css";
+let App = () => {
+  console.log(style);
+  return (
+    <>
+      <h1>I am App Component - Module CSS</h1>
+      <section id={style.container}>
+        <div className={style.items}>Home</div>
+        <div className={style.items}>About</div>
+        <div className={style.items}>Contact</div>
+        <div className={style.items}>Services</div>
+        <div className={style.items}>Login</div>
+      </section>
+    </>
+  );
+};
+export default App;
+*/
+
+// ? ===== Global CSS ====
+/*
+let App = () => {
+  return (
+    <>
+      <h1>I am App Component - Global CSS</h1>
+      <section id="container">
+        <div className="items">Home</div>
+        <div className="items">About</div>
+        <div className="items">Contact</div>
+        <div className="items">Services</div>
+        <div className="items">Login</div>
+      </section>
+    </>
+  );
+};
+export default App;
+*/
+
+// ! ================ Task on Components , Props , CSS =================
+
+import assestsData from "./assests/assets";
+import Product from "./ChildComponent";
+import style from "./meeshoTask.module.css";
+
+let App = () => {
+  // console.log(assestsData);
+  // console.log(assestsData.meeshoTask);
+  // console.log(assestsData.meeshoTask.mensData);
+  return (
+    <>
+      <h1 id={style.mainTitle}>Welcome to Meesho</h1>
+      <Product
+        category="Men's Collection"
+        data={assestsData.meeshoTask.mensData}
+      />
+
+      <Product
+        category="Women's Collection"
+        data={assestsData.meeshoTask.womensData}
+      />
+    </>
+  );
+};
+
 export default App;

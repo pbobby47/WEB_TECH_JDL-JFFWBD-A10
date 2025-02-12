@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: blue;
+}
+
+#container {
+  border: 2px solid;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: teal;
+  color: white;
+}
+
+.items {
+  border: solid white;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
