@@ -75,7 +75,10 @@ let assestsData = {
     footwearData: [],
   },
   githubTask: {},
-  fakestoreapiTask: {},
+  fakestoreapiTask: {
+    products: [],
+    users: [],
+  },
 };
 
 export default assestsData;

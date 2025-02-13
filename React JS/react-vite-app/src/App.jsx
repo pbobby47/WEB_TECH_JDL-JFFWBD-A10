@@ -897,7 +897,7 @@ export default App;
 */
 
 // ! ================ Task on Components , Props , CSS =================
-
+/*
 import assestsData from "./assests/assets";
 import Product from "./ChildComponent";
 import style from "./meeshoTask.module.css";
@@ -923,3 +923,250 @@ let App = () => {
 };
 
 export default App;
+*/
+
+// ! ============== useState() Hook ======================
+/*
+It is an inbuilt hook provided by react Js.
+It helps us to create dynamic data in a component
+It helps to do the state management in a component
+Syntax: let [variableName , updatefunction] = useSatate(intialvalue);
+*/
+
+// ? Example 1 : on Numbers
+/*
+import { useState } from "react";
+
+let App = () => {
+  // let count = 0; // static data
+
+  let [count, setCount] = useState(0); // dynamic data
+
+  console.log("Count Value -", count);
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <h2>Count : {count}</h2>
+      <button
+        onClick={() => {
+          setCount(10);
+        }}
+      >
+        Update to 10
+      </button>
+      <button
+        onClick={() => {
+          setCount(20);
+        }}
+      >
+        update to 20
+      </button>
+      <br /> <br />
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => setCount(0)}>Reset</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </>
+  );
+};
+export default App;
+*/
+
+// ? Example 1.1 : on Numbers
+/*
+import { useState } from "react";
+let App = () => {
+  let [a, b] = useState(0);
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <h2>Count : {a}</h2>
+      <button onClick={() => b(a + 1)}>Increment</button>
+    </>
+  );
+};
+export default App;
+*/
+
+// ? Example 1.2 : on Numbers
+/*
+import { useState } from "react";
+let App = () => {
+  // let count1 = 0;
+  // let count2 = 0;
+
+  let [count1, setCount1] = useState(0);
+  let [count2, setCount2] = useState(10);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+
+      <h2>Counter : {count1}</h2>
+      <button onClick={() => setCount1(count1 - 1)}>Decrement</button>
+      <button onClick={() => setCount1(0)}>Reset</button>
+      <button onClick={() => setCount1(count1 + 1)}>Increment</button>
+
+      <h2>Counter : {count2}</h2>
+      <button onClick={() => setCount2(count2 - 5)}>Decrement</button>
+      <button onClick={() => setCount2(10)}>Reset</button>
+      <button onClick={() => setCount2(count2 + 5)}>Increment</button>
+    </>
+  );
+};
+export default App;
+*/
+
+// ? Example 2 : on Strings
+/*
+import { useState } from "react";
+let App = () => {
+  let [name, setName] = useState("Ekansh");
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <h2>Name : {name}</h2>
+      <button onClick={() => setName("Ekansh")}>Short Name</button>
+      <button onClick={() => setName("Ekansh Jana")}>Full Name</button>
+    </>
+  );
+};
+export default App;
+*/
+
+// ? Example 3: on boolean
+/*
+import { useState } from "react";
+let App = () => {
+  let [gender, setGender] = useState(false);
+
+  // false ---> female
+  // true ---> male
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <h2>Gender : {gender ? "Male" : "Female"}</h2>
+      <button onClick={() => setGender(true)}>Male</button>
+      <button onClick={() => setGender(false)}>Female</button>
+    </>
+  );
+};
+export default App;
+*/
+
+// ? Example 4: on Arrays
+/*
+import { useState } from "react";
+let App = () => {
+  let [skills, setSkills] = useState([ "Python" ,"SQL","HTML","CSS","JavaScript","React JS"]);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <button
+        onClick={() => {
+          setSkills(["Python", "SQL", "HTML", "CSS", "JavaScript", "React JS"]);
+        }}
+      >
+        Python
+      </button>
+      <button
+        onClick={() => {
+          setSkills([ "SQL", "HTML","CSS","JavaScript","React JS","springboot","hibernate" ,"java"]);
+        }}
+      >
+        Java
+      </button>
+      <button
+        onClick={() => {
+          setSkills(["SQL","HTML","CSS","mongodb","JavaScript","React JS","node js","express" ]);
+        }}
+      >
+        MERN
+      </button>
+
+      <h2>
+        Skills :
+        {skills.map((val, ind) => {
+          return <li key={ind}>{val}</li>;
+        })}
+      </h2>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 4.1 : on Arrays
+/*
+import { useState } from "react";
+let App = () => {
+  let python = ["Python", "SQL", "HTML", "CSS", "JavaScript", "React JS"];
+
+  let [skills, setSkills] = useState(python);
+
+  let handlePython = () => {
+    setSkills(python);
+  };
+
+  let handleJava = () => {
+    setSkills(["java", "SQL", "WEB", "React JS", "springboot", "hibernate"]);
+  };
+
+  let handleMERN = () => {
+    setSkills(["SQL", "WEB", "mongodb", "React JS", "node js", "express"]);
+  };
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <button onClick={handlePython}>Python</button>
+      <button onClick={handleJava}>Java</button>
+      <button onClick={handleMERN}>MERN</button>
+
+      <h2>
+        Skills :
+        {skills.map((val, ind) => {
+          return <li key={ind}>{val}</li>;
+        })}
+      </h2>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 5: Objects
+/*
+import { useState } from "react";
+
+let App = () => {
+  let student1 = { sname: "Amit", age: 20, course: "MERN" };
+  let student2 = { sname: "Shubham", age: 21, course: "Python" };
+  let student3 = { sname: "Nazme", age: 22, course: "Python" };
+  let student4 = { sname: "Prabal", age: 23, course: "Java" };
+
+  let [state, setState] = useState(student1);
+  console.log(state);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <button onClick={() => setState(student1)}>Student 1</button>
+      <button onClick={() => setState(student2)}>Student 2</button>
+      <button onClick={() => setState(student3)}>Student 3</button>
+      <button onClick={() => setState(student4)}>Student 4</button>
+      <hr />
+      <h2>Name : {state.sname}</h2>
+      <h2>Age : {state.age}</h2>
+      <h2>Course : {state.course}</h2>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 6:
