@@ -1170,3 +1170,78 @@ export default App;
 */
 
 // ? Example 6:
+import { useState } from "react";
+import assestsData from "./assests/assets";
+import ChildComponent from "./ChildComponent";
+
+let App = () => {
+  console.log(assestsData.fakestoreapiTask.products);
+
+  // let data = assestsData.fakestoreapiTask.products; // static data
+  let products = assestsData.fakestoreapiTask.products;
+
+  let [data, setData] = useState(products);
+
+  let handleAllItems = () => {
+    setData(products);
+  };
+
+  let handleMens = () => {
+    let filteredMen = [];
+
+    products.map((val, ind) => {
+      if (val.category === "men's clothing") {
+        filteredMen.push(val);
+      }
+    });
+
+    setData(filteredMen);
+  };
+
+  let handleWomens = () => {
+    let filterWomens = [];
+
+    products.map((val, ind) => {
+      if (val.category === "women's clothing") {
+        filterWomens.push(val);
+      }
+    });
+
+    setData(filterWomens);
+  };
+
+  let handlejewelery = () => {
+    let filterJewellery = [];
+    products.map((val, ind) => {
+      if (val.category === "jewelery") {
+        filterJewellery.push(val);
+      }
+    });
+    setData(filterJewellery);
+  };
+
+  let handleElectronics = () => {
+    let filterElectronics = [];
+    products.map((val, ind) => {
+      if (val.category === "electronics") {
+        filterElectronics.push(val);
+      }
+    });
+    setData(filterElectronics);
+  };
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <button onClick={handleAllItems}>All Items</button>
+      <button onClick={handleMens}>Mens Collection</button>
+      <button onClick={handleWomens}>Womens Collection</button>
+      <button onClick={handlejewelery}>Jeweleries</button>
+      <button onClick={handleElectronics}>Electronics</button>
+      <hr />
+      <ChildComponent products={data} />
+    </>
+  );
+};
+
+export default App;

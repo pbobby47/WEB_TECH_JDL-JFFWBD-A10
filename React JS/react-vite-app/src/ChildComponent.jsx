@@ -292,3 +292,12 @@ export default Product;
 
 // ! ============== useState() Hook ============
 // ? Example 6:
+let ChildComponent = props => {
+  console.log(props);
+  return (
+    <>
+      <h1>I am ChildComponent</h1>
+    </>
+  );
+};
+export default ChildComponent;
