@@ -1170,6 +1170,7 @@ export default App;
 */
 
 // ? Example 6:
+/*
 import { useState } from "react";
 import assestsData from "./assests/assets";
 import ChildComponent from "./ChildComponent";
@@ -1245,3 +1246,56 @@ let App = () => {
 };
 
 export default App;
+*/
+
+// ! ============== Context API ===============
+/*
+Steps:
+    1. We have to create contextApi
+          o createContext
+    2. Provider
+    3. Consumer / useContext() Hook
+
+Context is a way to share data between components without having to pass props down to the component tree.
+
+>>> Step 1: createContext:
+import createContext from react.
+use the createContext() method, This returns a context object that can be used to provide and consume values.
+
+>>> Step 2: Provider:
+Use <ContextName.Provider> </ContextName.Provider> Component.
+In between wrap all the child components to which you want to send data.
+ Data can be transferred in value prop (Mandatory).
+Now, the data can be consumed by wrapped components and its children , grandchildren and so on.
+
+>>> Step 3: Consumer:
+Use <ContextName.Consumer></ContextName.Consumer> Component.
+This requires a function with a parameter as a child. Now, the data will store the parameter.
+===== or =====
+Use useContext()  Hook, It will directly consume the value.
+
+*/
+/*
+import { createContext } from "react";
+import ChildComponentA from "./ChildComponentA";
+import ChildComponentB from "./ChildComponentB";
+import assestsData from "./assests/assets";
+
+// ? Step 1:
+export let MyContext = createContext();
+
+let App = () => {
+  let data = assestsData.fakestoreapiTask.products;
+  return (
+    <>
+      <h1> I am App Component</h1>
+      //? step 2:
+      <MyContext.Provider value={data}>
+        <ChildComponentA />
+        <ChildComponentB />
+      </MyContext.Provider>
+    </>
+  );
+};
+export default App;
+*/
