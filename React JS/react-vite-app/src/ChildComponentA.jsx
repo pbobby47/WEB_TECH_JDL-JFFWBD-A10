@@ -1,4 +1,5 @@
 // ! ============== Context API [Consuming using Consumer] ===============
+/*
 import { MyContext } from "./App";
 
 const ChildComponentA = () => {
@@ -32,3 +33,25 @@ const ChildComponentA = () => {
 };
 
 export default ChildComponentA;
+*/
+
+// ! =================== HOC =======================
+import React from "react";
+import HOC from "./HOC";
+
+const ChildComponentA = props => {
+  console.log("ChildComponentA");
+  console.log(props);
+
+  return (
+    <>
+      <h2>I am ChildComponentA</h2>
+      <h3>Id : {props.id}</h3>
+      <h3>Name : {props.sname}</h3>
+      <h3>Age : {props.age}</h3>
+      <h3>Course : {props.course}</h3>
+    </>
+  );
+};
+
+export default HOC(ChildComponentA);

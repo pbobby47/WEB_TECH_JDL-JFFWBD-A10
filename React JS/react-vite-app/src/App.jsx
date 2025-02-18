@@ -1265,7 +1265,7 @@ use the createContext() method, This returns a context object that can be used t
 >>> Step 2: Provider:
 Use <ContextName.Provider> </ContextName.Provider> Component.
 In between wrap all the child components to which you want to send data.
- Data can be transferred in value prop (Mandatory).
+Data can be transferred in value prop (Mandatory).
 Now, the data can be consumed by wrapped components and its children , grandchildren and so on.
 
 >>> Step 3: Consumer:
@@ -1289,7 +1289,7 @@ let App = () => {
   return (
     <>
       <h1> I am App Component</h1>
-      //? step 2:
+       //? step 2: 
       <MyContext.Provider value={data}>
         <ChildComponentA />
         <ChildComponentB />
@@ -1299,3 +1299,38 @@ let App = () => {
 };
 export default App;
 */
+
+// ! ============= contextAPI task ==========
+/*
+import React from "react";
+import QspidersComponent from "./ContextAPI Task/QspidersComponent";
+
+const App = () => {
+  return (
+    <div>
+      <QspidersComponent />
+    </div>
+  );
+};
+
+export default App;
+*/
+
+// ! ====================== HOC =================
+import React from "react";
+import ChildComponentA from "./ChildComponentA";
+import ChildComponentB from "./ChildComponentB";
+
+const App = () => {
+  console.log("App Component");
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <ChildComponentA id="A101" />
+      <ChildComponentB id="B202" />
+    </>
+  );
+};
+
+export default App;
