@@ -36,6 +36,7 @@ export default ChildComponentA;
 */
 
 // ! =================== HOC =======================
+/*
 import React from "react";
 import HOC from "./HOC";
 
@@ -50,6 +51,26 @@ const ChildComponentA = props => {
       <h3>Name : {props.sname}</h3>
       <h3>Age : {props.age}</h3>
       <h3>Course : {props.course}</h3>
+    </>
+  );
+};
+
+export default HOC(ChildComponentA);
+*/
+
+// ! ============= Counter Task using HOC ================
+import React from "react";
+import HOC from "./HOC";
+
+const ChildComponentA = props => {
+  console.log(props);
+  return (
+    <>
+      <h2>I am ChildComponentA</h2>
+      <h2>Counter A : {props.counter}</h2>
+      <button onClick={props.handleDecrement}>Decrement</button>
+      <button onClick={props.handleReset}>Reset</button>
+      <button onClick={props.handleIncrement}>Increment</button>
     </>
   );
 };

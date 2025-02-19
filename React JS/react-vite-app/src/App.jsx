@@ -1317,6 +1317,7 @@ export default App;
 */
 
 // ! ====================== HOC =================
+/*
 import React from "react";
 import ChildComponentA from "./ChildComponentA";
 import ChildComponentB from "./ChildComponentB";
@@ -1329,6 +1330,167 @@ const App = () => {
       <h1>I am App Component</h1>
       <ChildComponentA id="A101" />
       <ChildComponentB id="B202" />
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ============= Counter Task using HOC ================
+/*
+import React, { useState } from "react";
+import ChildComponentA from "./ChildComponentA";
+import ChildComponentB from "./ChildComponentB";
+
+const App = () => {
+  return (
+    <>
+      <h1>I am App Component</h1>
+
+      <ChildComponentA />
+      <ChildComponentB />
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ================ Conditional Rendering ===============
+/*
+1. if , if -else , else-if , switch
+
+2. ternery operator
+
+3. short circuit operator (Logical AND)
+  Syntax:  condition && dataToDisplay
+
+*/
+
+// ?  ============= using if-else =============
+/* 
+1. if -else statement we should not use inside return statement
+*/
+/*
+import React, { useState } from "react";
+
+const App = () => {
+  let [counter, setCounter] = useState(0);
+  console.log(counter);
+
+  if (counter % 2 === 0) {
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Counter : {counter}</h2>
+        <button onClick={() => setCounter(counter + 1)}>Udpate</button>
+        <h2>Status : Even Number</h2>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Counter : {counter}</h2>
+        <button onClick={() => setCounter(counter + 1)}>Udpate</button>
+        <h2>Status : Odd Number</h2>
+      </>
+    );
+  }
+};
+
+export default App;
+*/
+
+// ? ============== using else if  ============
+/*
+import React, { useState } from "react";
+
+const App = () => {
+  let [number, setNumber] = useState(0);
+
+  if (number % 2 === 0) {
+    return (
+      <>
+        <h1>Number : {number}</h1>
+        <button onClick={() => setNumber(number + 1)}>Udpate Number</button>
+        <pre>Status : Number divisible by 2 </pre>
+      </>
+    );
+  } else if (number % 3 === 0) {
+    return (
+      <>
+        <h1>Number : {number}</h1>
+        <button onClick={() => setNumber(number + 1)}>Udpate Number</button>
+        <pre>Status : Number divisible by 3 </pre>
+      </>
+    );
+  } else if (number % 4 === 0) {
+    return (
+      <>
+        <h1>Number : {number}</h1>
+        <button onClick={() => setNumber(number + 1)}>Udpate Number</button>
+        <pre>Status : Number divisible by 4 </pre>
+      </>
+    );
+  } else if (number % 5 === 0) {
+    return (
+      <>
+        <h1>Number : {number}</h1>
+        <button onClick={() => setNumber(number + 1)}>Udpate Number</button>
+        <pre>Status : Number divisible by 5 </pre>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h1>Number : {number}</h1>
+        <button onClick={() => setNumber(number + 1)}>Udpate Number</button>
+        <pre>Status : Number divisible by 1 </pre>
+      </>
+    );
+  }
+};
+
+export default App;
+*/
+
+// ? ============ Using Ternery Operator ============
+/*
+import React, { useState } from "react";
+
+const App = () => {
+  let [counter, setCounter] = useState(0);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <h2>Counter : {counter}</h2>
+      <button onClick={() => setCounter(counter + 1)}>Update</button>
+      <h2>Status : {counter % 2 === 0 ? "Even" : "Odd"} Number</h2>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? =========== Logical AND Operator =========
+
+import React, { useState } from "react";
+
+const App = () => {
+  let [status, setStatus] = useState(true);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+
+      <button onClick={() => setStatus(true)}>Placed</button>
+      <button onClick={() => setStatus(false)}>Not Placed</button>
+      <h2>Status: {status ? "Placed" : "Not Placed"} </h2>
+      <h2>Status : {status && "Placed"}</h2>
     </>
   );
 };
