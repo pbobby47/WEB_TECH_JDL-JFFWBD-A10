@@ -1477,7 +1477,7 @@ export default App;
 */
 
 // ? =========== Logical AND Operator =========
-
+/*
 import React, { useState } from "react";
 
 const App = () => {
@@ -1491,6 +1491,95 @@ const App = () => {
       <button onClick={() => setStatus(false)}>Not Placed</button>
       <h2>Status: {status ? "Placed" : "Not Placed"} </h2>
       <h2>Status : {status && "Placed"}</h2>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 1:
+/*
+import React from "react";
+
+const App = () => {
+  let students = [
+    { sname: "Ekansh", isPlaced: false },
+    { sname: "Amit", isPlaced: true },
+    { sname: "Shivani", isPlaced: true },
+    { sname: "Mihir", isPlaced: true },
+    { sname: "Megha", isPlaced: true },
+    { sname: "Prabal", isPlaced: false },
+    { sname: "Deepak", isPlaced: true },
+    { sname: "Keshav", isPlaced: false },
+    { sname: "Kanishka", isPlaced: true },
+  ];
+
+  return (
+    <>
+      <h1>Students Details</h1>
+      {students.map((val, ind) => {
+        console.log(val, ind);
+
+        return (
+          <p>
+            {val.sname} {val.isPlaced ? "✅" : "✖️"}
+          </p>
+        );
+      })}
+    </>
+  );
+};
+
+export default App;
+*/
+// ? Example 2:
+import React from "react";
+import { useState } from "react";
+
+const App = () => {
+  let [toggle, setToggle] = useState(false);
+
+  return (
+    <>
+      <h1>Welome to Ekansh Show</h1>
+
+      <article>
+        {toggle ? (
+          <i
+            className="fa-solid fa-toggle-on"
+            onClick={() => setToggle(false)}
+          ></i>
+        ) : (
+          <i
+            className="fa-solid fa-toggle-off"
+            onClick={() => setToggle(true)}
+          ></i>
+        )}
+      </article>
+
+      <aside>
+        <h4>
+          <i class="fa-solid fa-house"></i>
+          {toggle && <span>Home</span>}
+        </h4>
+        <h4>
+          <i class="fa-solid fa-house"></i>
+          {toggle ? <span>Home</span> : ""}
+        </h4>
+        <h4>
+          <i class="fa-solid fa-house"></i>
+          {toggle ? <span>Home</span> : ""}
+        </h4>
+        <h4>
+          <i class="fa-solid fa-house"></i>
+          {toggle ? <span>Home</span> : ""}
+        </h4>
+        <h4>
+          <i class="fa-solid fa-house"></i>
+          {toggle ? <span>Home</span> : ""}
+        </h4>
+      </aside>
     </>
   );
 };
