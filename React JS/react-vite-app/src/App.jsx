@@ -1733,7 +1733,8 @@ Note:
   You provided a `value` prop to a form field without an `onChange` handler.
   This will render a read-only field. 
 */
-
+// ? Example 1:
+/*
 import React from "react";
 import { useState } from "react";
 
@@ -1773,6 +1774,226 @@ const App = () => {
         </p>
         <p>
           <button>submit</button>
+        </p>
+      </form>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 2:
+/*
+import React from "react";
+import { useState } from "react";
+
+const App = () => {
+  let [number1, setNumber1] = useState("");
+  let [number2, setNumber2] = useState("");
+  let [number3, setNumber3] = useState("");
+  let [result, setResult] = useState("");
+
+  let handleSubmit = e => {
+    e.preventDefault();
+
+    let sum = Number(number1) + number2 * 1 + +number3;
+    setResult(sum);
+  };
+
+  return (
+    <>
+      <h1>Addition of 3 Numbers</h1>
+      <form onSubmit={handleSubmit}>
+        <p>
+          <label>Number 1 : </label>
+          <input
+            type="text"
+            value={number1}
+            onChange={e => {
+              setNumber1(e.target.value);
+            }}
+          />
+        </p>
+        <p>
+          <label>Number 2 : </label>
+          <input
+            type="text"
+            value={number2}
+            onChange={e => {
+              setNumber2(e.target.value);
+            }}
+          />
+        </p>
+        <p>
+          <label>Number 3 : </label>
+          <input
+            type="text"
+            value={number3}
+            onChange={e => {
+              setNumber3(e.target.value);
+            }}
+          />
+        </p>
+        <p>
+          <button>Submit</button>
+        </p>
+      </form>
+
+      {result && <h1>Output: {result}</h1>}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 3:
+/*
+import React from "react";
+import { useState } from "react";
+
+const App = () => {
+  let [formData, setFormData] = useState({
+    sname: "Amit",
+    email: "a@gmail.com",
+    mobile: "9876541230",
+  });
+
+  // console.log(formData);
+
+  let handleName = e => {
+    // console.log("I am changing Name");
+    // console.log(e);
+    // console.log(e.target);
+    console.log(e.target.value);
+
+    setFormData({
+      ...formData,
+      sname: e.target.value,
+    });
+  };
+
+  let handleEmail = e => {
+    // console.log("I am changing Email");
+    console.log(e.target.value);
+
+    setFormData({
+      ...formData,
+      email: e.target.value,
+    });
+  };
+
+  let handleMobile = e => {
+    // console.log("I am changing Mobile No");
+    console.log(e.target.value);
+
+    setFormData({
+      ...formData,
+      mobile: e.target.value,
+    });
+  };
+
+  let handleSubmit = e => {
+    e.preventDefault();
+    console.log("Form submitted");
+    console.log(formData);
+  };
+
+  return (
+    <>
+      <h1>My Form</h1>
+      <form onSubmit={handleSubmit}>
+        <p>
+          <label>Name : </label>
+          <input type="text" value={formData.sname} onChange={handleName} />
+        </p>
+
+        <p>
+          <label>Email : </label>
+          <input type="text" value={formData.email} onChange={handleEmail} />
+        </p>
+
+        <p>
+          <label>Mobile No : </label>
+          <input type="text" value={formData.mobile} onChange={handleMobile} />
+        </p>
+        <p>
+          <button>Submit</button>
+        </p>
+      </form>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 3.1:
+import React from "react";
+import { useState } from "react";
+
+const App = () => {
+  let [formData, setFormData] = useState({
+    sname: "",
+    email: "",
+    mobile: "",
+  });
+
+  let handleChange = e => {
+    // console.log("I am changing input");
+    // console.log(e);
+    // console.log(e.target);
+
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+
+    console.log(formData);
+  };
+
+  let handleSubmit = e => {
+    e.preventDefault();
+    console.log("Form submitted");
+    console.log(formData);
+  };
+
+  return (
+    <>
+      <h1>My Form</h1>
+      <form onSubmit={handleSubmit}>
+        <p>
+          <label>Name : </label>
+          <input
+            type="text"
+            name="sname"
+            value={formData.sname}
+            onChange={handleChange}
+          />
+        </p>
+
+        <p>
+          <label>Email : </label>
+          <input
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </p>
+
+        <p>
+          <label>Mobile No : </label>
+          <input
+            type="text"
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleChange}
+          />
+        </p>
+        <p>
+          <button>Submit</button>
         </p>
       </form>
     </>
