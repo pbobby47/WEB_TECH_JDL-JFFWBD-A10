@@ -1930,6 +1930,7 @@ export default App;
 */
 
 // ? Example 3.1:
+/*
 import React from "react";
 import { useState } from "react";
 
@@ -2001,3 +2002,184 @@ const App = () => {
 };
 
 export default App;
+*/
+
+// ! =============== Life Cycle Methods of a Component =================
+
+// ? Example 1:
+/*
+import React from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props); // Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+
+    this.state = {
+      counter: 0,
+    };
+
+    console.log(this); // current Component
+    console.log(this.state);
+    console.log(this["state"]);
+  }
+
+  render() {
+    console.log("I am Class based App Component");
+
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Count : {this.state.counter}</h2>
+        <button>Decrement</button>
+        <button>Reset</button>
+        <button
+          onClick={() => {
+            console.log("Increment button clicked...");
+            this.setState({
+              counter: this.state.counter + 1,
+            });
+          }}
+        >
+          Increment
+        </button>
+      </>
+    );
+  }
+}
+export default App;
+*/
+
+// ? Example 2:
+/*
+import React from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    console.log("I am constructor method");
+    super(props);
+
+    this.state = {
+      counter1: 0,
+      counter2: 0,
+      counter3: 0,
+    };
+  }
+
+  render() {
+    console.log("I am render method");
+
+    return (
+      <center>
+        <h1>I am App Component</h1>
+        <h2>Counter1 : {this.state.counter1}</h2>
+        <button onClick={()=> this.setState({ ...this.state,  counter1: this.state.counter1 - 1})}>Decrement</button>
+        <button onClick={()=> this.setState({ ...this.state, counter1: 0})}>Reset</button>
+        <button onClick={() => this.setState({...this.state, counter1: this.state.counter1 + 1 })}>Increment</button>
+        
+        <h2>Counter2 : {this.state.counter2}</h2>
+        <button onClick={()=> this.setState({counter2: this.state.counter2 - 1})}>Decrement</button>
+        <button onClick={()=> this.setState({counter2: 0})}>Reset</button>
+        <button onClick={() => this.setState({ counter2: this.state.counter2 + 1 })}>Increment</button>
+        
+        <h2>Counter3 : {this.state.counter3}</h2>
+        <button onClick={()=> this.setState({counter3: this.state.counter3 - 1})}>Decrement</button>
+        <button onClick={()=> this.setState({counter3: 0})}>Reset</button>
+        <button onClick={()=> this.setState({counter3: this.state.counter3 + 1})}>Increment</button>
+      </center>
+    );
+
+  }
+}
+export default App;
+*/
+
+// ! ================ Mouting Phase =====================
+/*
+  Whenever a component is created and inserted into the DOM is called Mounting Phase.
+  ? 1. Constructor()
+    a. It is the first method to be called in Mounting Phase
+    b. This method will execute only once after the component Mounted.
+    c. It is the best place to do initializations.
+    d. To use "this" keyword,
+        i. firstly, we have to extend the features of React.Component
+        ii. we have to pass props as parameter to constructor method
+        iii. we must use super call.
+        iv. "this" keyword will points to the current component.
+    e. By default CBC contains state data. 
+    f. To create state data, this.state = object;
+    g. To udpate the state data, this.setState(new state obj)
+
+  ? 2. getDerivedStateFromProps():
+    a. getDerivedStateFromProps() method should be static.
+    b. It will execute just before the render() method.
+    c. It will return the new state data. 
+    d. it accepts prev props, prevsate as a paramters.
+    e. It must and should return a valid state object / null.
+
+  ? 3. render()
+    a. It is the only mandatory method in CBC's,
+    b. It will execute for each and every updates.
+    c. render() method allows us to write JSX(html + js);
+    d. It is not the best place to do side effects
+    e. side effects means the things which are not in react
+        ex: fetch , timers, window properties, etc.
+  
+  ? 4. componentDidMount():
+    a. componentDidMount() method will work only once after the component is mounted.
+    b. This is the best place to perform side effects
+    c. prefered to make GET requests here.
+*/
+
+import React from "react";
+class App extends React.Component {
+  constructor(props) {
+    console.log("I am constructor() method");
+    super(props);
+
+    this.state = { counter: 0 };
+    console.log(this.state);
+  }
+
+  static getDerivedStateFromProps(prevProps, prevState) {
+    console.log("I am getDerivedStateFromProps() method");
+
+    // return newStateValue;
+    console.log(prevState);
+    // return { counter: 50 };
+    return null;
+  }
+
+  componentDidMount() {
+    console.log("I a componentDidMount() Method");
+
+    let getData = async () => {
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      console.log(data);
+    };
+
+    getData();
+  }
+
+  render() {
+    console.log("I am render() method");
+    console.log(this.state);
+
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Counter : {this.state.counter}</h2>
+        <button
+          onClick={() => this.setState({ counter: this.state.counter + 1 })}
+        >
+          Update
+        </button>
+      </>
+    );
+  }
+}
+
+export default App;
+
+// ! ================ Udpating Phase =====================
+// ! ================ UnMounting Phase =====================
