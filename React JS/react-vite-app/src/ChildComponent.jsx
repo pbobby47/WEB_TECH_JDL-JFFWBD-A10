@@ -292,6 +292,7 @@ export default Product;
 
 // ! ============== useState() Hook ============
 // ? Example 6:
+/*
 let ChildComponent = props => {
   console.log(props);
   return (
@@ -300,4 +301,26 @@ let ChildComponent = props => {
     </>
   );
 };
+export default ChildComponent;
+*/
+
+// ! ================================= LIfe Cycle Methods of a Component ========================
+// ! =========== UnMounting Phase =============
+
+import React from "react";
+
+class ChildComponent extends React.Component {
+  constructor(props) {
+    super();
+    console.log("I am Mounted 🕺🕺💃💃🕺💃🕺");
+  }
+  componentWillUnmount() {
+    console.log("I am componentWillUnmount() Method 😭😭😭");
+  }
+
+  render() {
+    console.log("I am render method - childcomponent");
+    return <h1>I am ChildComponent</h1>;
+  }
+}
 export default ChildComponent;

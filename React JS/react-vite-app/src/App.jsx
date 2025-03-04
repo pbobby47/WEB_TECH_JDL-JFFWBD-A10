@@ -2093,7 +2093,7 @@ class App extends React.Component {
 export default App;
 */
 
-// ! ================ Mouting Phase =====================
+// ! ================ Mounting Phase =====================
 /*
   Whenever a component is created and inserted into the DOM is called Mounting Phase.
   ? 1. Constructor()
@@ -2129,7 +2129,7 @@ export default App;
     b. This is the best place to perform side effects
     c. prefered to make GET requests here.
 */
-
+/*
 import React from "react";
 class App extends React.Component {
   constructor(props) {
@@ -2180,6 +2180,223 @@ class App extends React.Component {
 }
 
 export default App;
+*/
 
-// ! ================ Udpating Phase =====================
+// ! ================ Updating Phase =====================
+/*
+  Whenever there some changes in component, react will re -render the component and this phase is called updating phase.
+  changes in props, state.
+
+  ? 1. getDerivedStateFromProps():
+    This method is as same in Mouting Phase.
+    This method will execute just before the render method.
+    It will provide the static state data.
+    It will return a new object as state data. 
+
+  ? 2. shouldComponentUpdate():
+      This method helps us to improve the performance of an application.
+      It will compare the previous props/states with current props/states. 
+      It will return a boolean value.
+      If true, render() method will execute
+      If false, render() method will not execute
+      By default the value is true.
+      Called to determine whether the change in props and state should trigger a re-render.
+      Component always returns true. 
+      PureComponent implements a shallow comparison on props and state and returns true if any props or states have changed.
+      If false is returned, Component.render, componentWillUpdate and componentDidUpdate will not be called.
+
+  ? 3. render():
+      As same in mounting phase
+
+  ? 4. getSnapShotBeforeUpdate():
+      This method will start working just before the render() method.
+      Through out the render method it will observe the changes and it will send the changes to componentDidUpdate() method
+      getSnapshotBeforeUpdate() should be used with componentDidUpdate().
+      This component defines getSnapshotBeforeUpdate() only.
+      App.getSnapshotBeforeUpdate(): A snapshot value (or null) must be returned.
+
+  ? 5. componentDidUpdate():
+      This will get the snapshot data from getSnapShotBeforeUpdate() method.
+      This is the best place to perform side effects.
+      specificly like: PUT, PATCH methods.
+*/
+/*
+import React from "react";
+class App extends React.Component {
+  constructor(props) {
+    console.log("I am constructor() method");
+    super(props);
+
+    this.state = { counter: 0 };
+  }
+
+  static getDerivedStateFromProps(prevProps, prevState) {
+    console.log("I am getDerivedStateFromProps() method");
+
+    return null;
+  }
+
+  shouldComponentUpdate(prevProps, prevStates) {
+    console.log("I am shouldComponentUpdate() method");
+    // console.log(prevProps, prevStates);
+
+    // if previous states/props = current states/props
+    // return false;
+
+    // if previous states/props != current states/props
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("I am getSnapshotBeforeUpdate() Method");
+
+    // return null;
+    return prevState;
+  }
+
+  componentDidUpdate(props, state, snapshot) {
+    console.log("I am componentDidUpdate() method");
+    console.log("My snap data is -", snapshot);
+  }
+
+  componentDidMount() {
+    console.log("I a componentDidMount() Method");
+
+    let getData = async () => {
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      // console.log(data);
+    };
+
+    getData();
+  }
+
+  render() {
+    console.log("I am render() method");
+
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Counter : {this.state.counter}</h2>
+        <button
+          onClick={() => this.setState({ counter: this.state.counter + 1 })}
+        >
+          Update
+        </button>
+      </>
+    );
+  }
+}
+
+export default App;
+*/
+
 // ! ================ UnMounting Phase =====================
+/*
+  Whenever the component is removed the from the DOM is called unMounting Phase.
+*/
+
+// ? Example 1:
+/*
+import React from "react";
+class App extends React.Component {
+  constructor(props) {
+    console.log("I am constructor() method");
+    super(props);
+
+    this.state = { counter: 0 };
+  }
+
+  static getDerivedStateFromProps(prevProps, prevState) {
+    console.log("I am getDerivedStateFromProps() method");
+
+    return null;
+  }
+
+  shouldComponentUpdate(prevProps, prevStates) {
+    console.log("I am shouldComponentUpdate() method");
+    // console.log(prevProps, prevStates);
+
+    // if previous states/props = current states/props
+    // return false;
+
+    // if previous states/props != current states/props
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("I am getSnapshotBeforeUpdate() Method");
+
+    // return null;
+    return prevState;
+  }
+
+  componentDidUpdate(props, state, snapshot) {
+    console.log("I am componentDidUpdate() method");
+    console.log("My snap data is -", snapshot);
+  }
+
+  componentDidMount() {
+    console.log("I a componentDidMount() Method");
+
+    let getData = async () => {
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      // console.log(data);
+    };
+
+    getData();
+  }
+
+  componentWillUnmount() {
+    console.log("I am componentWillUnmount() method");
+  }
+
+  render() {
+    console.log("I am render() method");
+
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Counter : {this.state.counter}</h2>
+        <button
+          onClick={() => this.setState({ counter: this.state.counter + 1 })}
+        >
+          Update
+        </button>
+      </>
+    );
+  }
+}
+
+export default App;
+*/
+
+// ? Example 2:
+import React from "react";
+import ChildComponent from "./ChildComponent";
+class App extends React.Component {
+  constructor(props) {
+    console.log("I am constructor() method");
+    super(props);
+
+    this.state = { counter: 0, isDisplay: true };
+  }
+
+  render() {
+    console.log("I am render() method - App Component");
+
+    return (
+      <>
+        <h1>I am App Component</h1>
+        <h2>Counter : {this.state.counter}</h2>
+        <button onClick={() => this.setState({ counter: this.state.counter + 1 })} >  Update  </button>
+        <br /> <br />
+        <button onClick={() => this.setState({ isDisplay: !this.state.isDisplay })} > Toggle </button>
+        {this.state.isDisplay ? <ChildComponent /> : null}
+      </>
+    );
+  }
+}
+
+export default App;
