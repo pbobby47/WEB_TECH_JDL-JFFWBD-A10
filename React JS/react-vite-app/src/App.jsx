@@ -2373,6 +2373,7 @@ export default App;
 */
 
 // ? Example 2:
+/*
 import React from "react";
 import ChildComponent from "./ChildComponent";
 class App extends React.Component {
@@ -2398,5 +2399,113 @@ class App extends React.Component {
     );
   }
 }
+
+export default App;
+*/
+
+// ! ============================ useEffect() Hook =====================
+/*
+1. useEffect() is a hook in react which helps to peerform side effects.
+2. useEffect() is an alternative to componentDidMount() , componentDidUpdate() and componentWillUnMount() methods of class based components.
+*/
+
+import React, { useState } from "react";
+import { useEffect } from "react";
+import ChildComponent from "./ChildComponent";
+
+const App = () => {
+  // console.log("I am App Component");
+  let [counter1, setCounter1] = useState(0);
+  let [counter2, setCounter2] = useState(0);
+  let [isDisplay, setDisplay] = useState(true);
+
+  // ? Case 1:
+  // useEffect Hook without dependecny array will work for every changes.
+  /*
+  useEffect(() => {
+    console.log("I am useEffect() Hook");
+    let getData = async () => {
+      console.log("I am fetching Data.....");
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      console.log(data);
+    };
+    getData();
+  });
+  */
+
+  // ? Case 2:
+  // useEffect Hook with dependency array will work only once.
+  // It will act as componentDidMount() method.
+  /*
+  useEffect(() => {
+    console.log("I am useEffect() Hook working as componentDidMount() method.");
+    let getData = async () => {
+      console.log("I am fetching Data.....");
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      console.log(data);
+    };
+    getData();
+  }, []);
+  */
+
+  // ? Case 3:
+  // useEffect Hook with dependency array including state variables will work only after the state variable data changed.
+  // It will act as componentDidUpdate() method.
+  /*
+  useEffect(() => {
+    console.log(
+      "I am useEffect() Hook working as componentDidUpdate() method."
+    );
+    console.log("Heyy, Counter 1 changed");
+
+    let getData = async () => {
+      console.log("I am fetching Data.....");
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      console.log(data);
+    };
+    getData();
+  }, [counter1]);
+
+  useEffect(() => {
+    console.log("Heyy, Counter 2 changed");
+    let getData = async () => {
+      console.log("I am fetching Data.....");
+      let res = await fetch("https://fakestoreapi.com/products");
+      let data = await res.json();
+      console.log(data);
+    };
+    getData();
+  }, [counter2]);
+
+  useEffect(() => {
+    console.log("You haved changes either counter1 or counter2");
+    console.log({
+      counter1Value: counter1,
+      counter2Value: counter2,
+    });
+  }, [counter1, counter2]);
+  */
+
+  return (
+    <>
+      <h1>I am useEffect() Hook</h1>
+      <h2>Counter1 : {counter1}</h2>
+      <h2>Counter2 : {counter2}</h2>
+      <button onClick={() => setCounter1(counter1 + 1)}>
+        Update Counter 1
+      </button>
+      <button onClick={() => setCounter2(counter2 + 1)}>
+        Update Counter 2
+      </button>
+      <hr />
+      <button onClick={() => setDisplay(!isDisplay)}>Toggle</button>
+
+      {isDisplay && <ChildComponent />}
+    </>
+  );
+};
 
 export default App;
