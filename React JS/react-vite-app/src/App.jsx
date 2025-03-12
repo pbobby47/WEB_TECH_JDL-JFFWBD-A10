@@ -2408,7 +2408,7 @@ export default App;
 1. useEffect() is a hook in react which helps to peerform side effects.
 2. useEffect() is an alternative to componentDidMount() , componentDidUpdate() and componentWillUnMount() methods of class based components.
 */
-
+/*
 import React, { useState } from "react";
 import { useEffect } from "react";
 import ChildComponent from "./ChildComponent";
@@ -2421,7 +2421,6 @@ const App = () => {
 
   // ? Case 1:
   // useEffect Hook without dependecny array will work for every changes.
-  /*
   useEffect(() => {
     console.log("I am useEffect() Hook");
     let getData = async () => {
@@ -2432,12 +2431,10 @@ const App = () => {
     };
     getData();
   });
-  */
 
   // ? Case 2:
   // useEffect Hook with dependency array will work only once.
   // It will act as componentDidMount() method.
-  /*
   useEffect(() => {
     console.log("I am useEffect() Hook working as componentDidMount() method.");
     let getData = async () => {
@@ -2448,12 +2445,10 @@ const App = () => {
     };
     getData();
   }, []);
-  */
 
   // ? Case 3:
   // useEffect Hook with dependency array including state variables will work only after the state variable data changed.
   // It will act as componentDidUpdate() method.
-  /*
   useEffect(() => {
     console.log(
       "I am useEffect() Hook working as componentDidUpdate() method."
@@ -2487,7 +2482,6 @@ const App = () => {
       counter2Value: counter2,
     });
   }, [counter1, counter2]);
-  */
 
   return (
     <>
@@ -2504,6 +2498,240 @@ const App = () => {
       <button onClick={() => setDisplay(!isDisplay)}>Toggle</button>
 
       {isDisplay && <ChildComponent />}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ================= useEffect() Hook with fetch API ============
+/*
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+
+const App = () => {
+  let [data, setData] = useState([]);
+
+  let getData = async () => {
+    let res = await fetch("https://fakestoreapi.com/products");
+    let data = await res.json();
+    console.log(data);
+    setData(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <>
+      <h1>I am FakeStore API</h1>
+
+      {data.map((val, ind) => {
+        console.log(ind, "---", val);
+      })}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ================= useEffect() Hook with axios ============
+/*
+? Step 1: 
+  npm install axios
+  npm i axios
+
+? step 2:
+  import variableName from axios
+
+? step 3:
+  API requests:
+    GET --> It will get the data.
+    POST --> It will send the data. 
+    PUT --> It will update the data.
+    PATCH --> It will udpate the data partially. 
+    DELETE --> It will delete the data.
+
+? step 4:
+working:
+  GET:
+    variablename.get("path address");
+
+  POST:
+    variablename.post("path address" , payload);
+
+  PUT:
+    variablename.put("path address / {id}" , payload);
+
+  PATCH:
+    variablename.patch("path address / {id}" , payload);
+
+  DELETE:
+    variablename.delete"path address / {id}");
+*/
+/*
+import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+
+const App = () => {
+  let [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // ? Promises
+    // console.log(axios.get("https://fakestoreapi.com/products"));
+    // axios.get("https://fakestoreapi.com/products").then(res => {
+    //   console.log(res);
+    //   console.log(res.data);
+    //   setProducts(res.data);
+    // });
+
+    //? Async Await
+    let getData = async () => {
+      let { data } = await axios.get("https://fakestoreapi.com/products"); // direct destructuring without storing in a varible.
+
+      setProducts(data);
+    };
+    getData();
+  }, []);
+
+  return (
+    <>
+      <h1>I am Axios</h1>
+
+      <div className="bg-white">
+        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+            Products List
+          </h2>
+
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            {products.map(product => (
+              <div key={product.id} className="group relative">
+                <img
+                  src={product.image}
+                  className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                />
+                <div className="mt-4 flex justify-between">
+                  <div>
+                    <h3 className="text-sm text-gray-700">
+                      <a
+                        href={`https://fakestoreapi.com/products/${product.id}`}
+                      >
+                        <span aria-hidden="true" className="absolute inset-0" />
+                        {product.title}
+                      </a>
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-500">
+                      {product.category}
+                    </p>
+                  </div>
+                  <p className="text-sm font-medium text-gray-900">
+                    {product.price}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! =============== Portals / Models  ===================
+/*
+1. Portals allows us to display  data on the UI and withour rendering into root element.
+2. How to Use:
+  Step 1: 
+      create one more element in the main html file
+      use id and target it.
+
+  step 2: 
+      import ReactDOM from "react-dom";
+
+      ReactDOM.createPortal( content , container );
+      Ex: ReactDOM.createPortal( <h1>I am h1 tag</h1> ,  document.getElementById("portal"));
+*/
+
+// ? Case 1:
+/*
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+const App = () => {
+  let [isOpen1, setOpen1] = useState(false);
+  let [isOpen2, setOpen2] = useState(false);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <section style={{ border: "solid" }}>
+        <h2>Without Portal</h2>
+
+        {isOpen1 ? (
+          <h1>
+            I am display without Portal
+            <button onClick={() => setOpen1(false)}>✖️</button>
+          </h1>
+        ) : null}
+        <button onClick={() => setOpen1(true)}>Open 1</button>
+      </section>
+
+      <section style={{ border: "solid" }}>
+        <h2>With Portal</h2>
+
+        {isOpen2
+          ? ReactDOM.createPortal(
+              <h1>
+                I am display with Portal
+                <button onClick={() => setOpen2(false)}>✖️</button>
+              </h1>,
+              document.getElementById("portal")
+            )
+          : null}
+        <button onClick={() => setOpen2(true)}>Open 2</button>
+      </section>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Case 2:
+import React, { useState } from "react";
+import NonPortalComponent from "./portals/NonPortalComponent";
+import PortalComponent from "./portals/PortalComponent";
+
+const App = () => {
+  let [isOpen1, setOpen1] = useState(false);
+  let [isOpen2, setOpen2] = useState(false);
+
+  return (
+    <>
+      <h1>Without Portal</h1>
+      <section style={{ border: "solid" }}>
+        {isOpen1 && <NonPortalComponent />}
+        <button onClick={() => setOpen1(true)}>
+          Open Non Portal Component
+        </button>
+      </section>
+      <h1>With Portal</h1>
+      <section style={{ border: "solid" }}>
+        {isOpen2 && <PortalComponent closeFn={() => setOpen2(false)} />}
+        <button onClick={() => setOpen2(true)}>
+          Open Portal Component
+        </button>
+      </section>
     </>
   );
 };
