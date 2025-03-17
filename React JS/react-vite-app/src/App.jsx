@@ -2708,6 +2708,7 @@ export default App;
 */
 
 // ? Case 2:
+/*
 import React, { useState } from "react";
 import NonPortalComponent from "./portals/NonPortalComponent";
 import PortalComponent from "./portals/PortalComponent";
@@ -2733,6 +2734,69 @@ const App = () => {
         </button>
       </section>
     </>
+  );
+};
+
+export default App;
+*/
+
+// ! =============== Pure Components =============
+/*
+import React from "react";
+import PureParent from "./PureComponents/PureParent";
+
+const App = () => {
+  return (
+    <>
+      <PureParent />
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ========== useCallback() ==============
+/*
+It will helps us to add additional features to React.memo 
+? When to use:
+  whenever we are passing functions as props we have to use it.
+
+? How to use: 
+  Syntax: useCallback( function, [dependencies])
+
+? Working:
+1. It will stop the recreation of functions unless the dependency changed.
+2. as there is not recreation of function, function  reference will not change, as function reference not changed it props are not changed, as props not changed it will not re-render the component.
+*/
+
+import React, { useCallback, useState } from "react";
+import TitleComponent from "./TitleComponent";
+import CounterComponent from "./CounterComponent";
+import ButtonComponent from "./ButtonComponent";
+
+const App = () => {
+  let [age, setAge] = useState(20);
+  let [salary, setSalary] = useState(50000);
+
+  let handleAge = useCallback(() => {
+    setAge(age + 1);
+  }, [age]);
+
+  let handleSalary = useCallback(() => {
+    setSalary(salary + 10000);
+  }, [salary]);
+
+  return (
+    <center>
+      <TitleComponent>useCallback() Hook</TitleComponent>
+
+      <CounterComponent data={age}>Age</CounterComponent>
+      <ButtonComponent fn={handleAge}>Update Age</ButtonComponent>
+
+      <CounterComponent data={salary}>Salary</CounterComponent>
+      <ButtonComponent fn={handleSalary}>Update Salary</ButtonComponent>
+    </center>
   );
 };
 
