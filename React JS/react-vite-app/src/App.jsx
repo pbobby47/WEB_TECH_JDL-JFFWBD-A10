@@ -2849,7 +2849,8 @@ const App = () => {
 export default App;
 */
 
-// ! ================= React- Routing (version 5) =================
+// ! ================= React - Routing (version 5) =================
+/*
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Routes } from "react-router-dom";
@@ -2880,6 +2881,160 @@ const App = () => {
       </BrowserRouter>
     </>
   );
+};
+
+export default App;
+*/
+
+// ! ================= React - Nested Routing (version 5) =================
+/*
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Company from "./pages/aboutpages/Company";
+import Employess from "./pages/aboutpages/Employess";
+import Users from "./pages/aboutpages/Users";
+import ContactHR from "./pages/contactpages/ContactHR";
+import ContactTrainer from "./pages/contactpages/ContactTrainer";
+import ContactCounsellor from "./pages/contactpages/ContactCounsellor";
+import Dashboard from "./pages/Dashboard";
+import HandleErrors from "./pages/HandleErrors";
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />}>
+              <Route path="company" element={<Company />} />
+              <Route path="employees" element={<Employess />} />
+              <Route path="users" element={<Users />} />
+            </Route>
+            <Route path="/contact" element={<Contact />}>
+              <Route path="hrs" element={<ContactHR />} />
+              <Route path="trainers" element={<ContactTrainer />} />
+              <Route path="counsellors" element={<ContactCounsellor />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+          </Route>
+          <Route path="*" element={<HandleErrors />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ============== React Routing (v6) ==============
+/*
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+
+const App = () => {
+  let router = createBrowserRouter([
+    {
+      path: "/home",
+      element: <Home />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+  ]);
+
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
+};
+
+export default App;
+
+
+*/
+
+// ! ============== React - Nested Routing (V6) =============
+
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import HandleErrors from "./pages/HandleErrors";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from './pages/Contact';
+import Login from './pages/Login';
+
+import Company from "./pages/aboutpages/Company";
+
+const App = () => {
+  let router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Dashboard />,
+      children: [
+        {
+          path: "home",
+          element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
+          children: [
+            {
+              path: "company",
+              element: <Company />,
+            },
+            {
+              path: "company",
+              element: <Company />,
+            },
+            {
+              path: "company",
+              element: <Company />,
+            },
+          ],
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <HandleErrors />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 };
 
 export default App;
