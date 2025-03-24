@@ -1,0 +1,14 @@
+{
+  "employees": [
+    {
+      "name": "Amit",
+      "department": "Sales",
+      "package": "20 LPA"
+    },
+    {
+      "name": "Shivani",
+      "department": "Telecaller",
+      "package": "2 CR"
+    }
+  ]
+}
