@@ -24,11 +24,11 @@ const Dashboard = () => {
             gap: "50px",
           }}
         >
-          <NavLink>Create Employees</NavLink>
-          <NavLink>View All Employees</NavLink>
+          <NavLink to="/createemp">Create Employees</NavLink>
+          <NavLink to="/viewall"> View All Employees</NavLink>
         </div>
       </nav>
-      <section style={{ border: "solid red", height: "330px" }}>
+      <section style={{ border: "solid red", height: "500px" }}>
         section
         <Outlet></Outlet>
       </section>

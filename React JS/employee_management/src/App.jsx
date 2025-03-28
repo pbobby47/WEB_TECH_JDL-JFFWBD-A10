@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import CreateEmp from "./components/CreateEmp";
 import ViewAllEmployees from "./components/ViewAllEmployees";
+import ViewSingle from "./components/ViewSingle";
 
 const App = () => {
   let router = createBrowserRouter([
@@ -17,6 +18,10 @@ const App = () => {
         {
           path: "viewall",
           element: <ViewAllEmployees />,
+        },
+        {
+          path: "viewsingle/:id",
+          element: <ViewSingle />,
         },
       ],
     },
