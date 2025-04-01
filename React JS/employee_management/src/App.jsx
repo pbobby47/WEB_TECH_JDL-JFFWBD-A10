@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import CreateEmp from "./components/CreateEmp";
 import ViewAllEmployees from "./components/ViewAllEmployees";
 import ViewSingle from "./components/ViewSingle";
+import UpdateEmployee from "./components/UpdateEmployee";
 
 const App = () => {
   let router = createBrowserRouter([
@@ -22,6 +23,10 @@ const App = () => {
         {
           path: "viewsingle/:id",
           element: <ViewSingle />,
+        },
+        {
+          path: "update/:id",
+          element: <UpdateEmployee />,
         },
       ],
     },

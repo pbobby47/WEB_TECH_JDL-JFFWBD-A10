@@ -48,10 +48,21 @@ const ViewAllEmployees = () => {
                   </NavLink>
                 </td>
                 <td>
-                  <button>Edit </button>
+                  <NavLink to={`/update/${id}`}>
+                    <button>Edit </button>
+                  </NavLink>
                 </td>
                 <td>
-                  <button>Delete </button>
+                  <button
+                    onClick={() => {
+                      console.log("Deleting ", id, name);
+
+                      axios.delete(`http://localhost:4000/employees/${id}`);
+                      window.location.assign("http://localhost:5184/viewall");
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );

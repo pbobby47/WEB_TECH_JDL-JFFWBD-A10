@@ -2978,7 +2978,7 @@ export default App;
 */
 
 // ! ============== React - Nested Routing (V6) =============
-
+/*
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
@@ -3035,6 +3035,53 @@ const App = () => {
   ]);
 
   return <RouterProvider router={router} />;
+};
+
+export default App;
+*/
+
+// ! ============ Error Boundaries ============
+// ? Example 1:
+/*
+import React from "react";
+import Cart from "./error boundaries/Cart";
+import CartTwo from "./error boundaries/CartTwo";
+
+const App = () => {
+  return (
+    <>
+      <section style={{ border: "solid red", height: "500px", width: "800px" }}>
+        <Cart />
+        <CartTwo />
+      </section>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 2:
+// Based on Capgemini hirings
+
+// ? Example 3:
+// loading, success, error
+
+import React from "react";
+import Status from "./error boundaries/Status";
+
+const App = () => {
+  return (
+    <>
+      <Status status="Loading" />
+      <Status status="Success" />
+      <Status status="error" />
+      <Status status="Pending" />
+      <Status status="Completed" />
+      <Status status="Failure" />
+      <Status status="doing" />
+    </>
+  );
 };
 
 export default App;

@@ -1,15 +1,15 @@
 {
   "employees": [
     {
-      "name": "Amit",
-      "email": "amit@gmail.com",
-      "department": "Sales",
+      "name": "Amit1",
+      "email": "amit1@gmail.com",
+      "department": "Sales1",
       "id": "8586"
     },
     {
-      "name": "Shivani",
-      "email": "shivani@gmail.com",
-      "department": "Telecaller",
+      "name": "Shivani1",
+      "email": "shivani1@gmail.com",
+      "department": "Telecaller1",
       "id": "2ba1"
     },
     {
@@ -31,34 +31,10 @@
       "id": "f920"
     },
     {
-      "name": "Gyandeep",
-      "email": "gyandeep@gmail.com",
-      "department": "Developer",
+      "name": "Gyandeep2",
+      "email": "gyandeep2@gmail.com",
+      "department": "Developer2",
       "id": "6891"
-    },
-    {
-      "id": "85db",
-      "name": "Kanishka",
-      "email": "k@gmail.com",
-      "department": "HR"
-    },
-    {
-      "id": "1461",
-      "name": "Mihir",
-      "email": "m@gmail.com",
-      "department": "Python dev"
-    },
-    {
-      "id": "40a9",
-      "name": "",
-      "email": "",
-      "department": ""
-    },
-    {
-      "id": "1022",
-      "name": "Nazme",
-      "email": "n@gmail.com",
-      "department": "SQL"
     }
   ]
 }
