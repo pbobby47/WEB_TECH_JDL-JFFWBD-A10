@@ -3066,7 +3066,7 @@ export default App;
 
 // ? Example 3:
 // loading, success, error
-
+/*
 import React from "react";
 import Status from "./error boundaries/Status";
 
@@ -3082,6 +3082,136 @@ const App = () => {
       <Status status="doing" />
     </>
   );
+};
+
+export default App;
+*/
+
+// ! ============================ Custom Hooks ==========================
+// ? Example 1:
+/*
+import React from "react";
+import { useState } from "react";
+import useGreetList from "./custom hooks/useGreetList";
+import useGreet from "./custom hooks/useGreet";
+
+const App = () => {
+  console.log("I am App Component");
+
+  let greetInfo = useGreet();
+  console.log(greetInfo);
+
+  let user1 = useGreetList("Amit");
+  let user2 = useGreetList("Deepak");
+  let user3 = useGreetList("Ekansh");
+  let user4 = useGreetList("Megha");
+
+  console.log(user1);
+  console.log(user2);
+  console.log(user3);
+  console.log(user4);
+
+  return <h3>Greet Info - {greetInfo}</h3>;
+};
+
+export default App;
+*/
+
+// ? Example 2:
+/*
+import React from "react";
+import useGreetList from "./custom hooks/useGreetList";
+
+const App = () => {
+  let mylist = ["Amit", "Tanmay", "Shivani", "Megha", "Gyandeep"];
+  let recievedData = useGreetList(mylist);
+  console.log(recievedData);
+  return (
+    <>
+      <h1>I am App Component</h1>
+      {recievedData.map((val, ind) => {
+        return <h2 key={ind}>{val}</h2>;
+      })}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 3:
+/*
+import React from "react";
+import useCalculator from "./custom hooks/useCalculator";
+
+const App = () => {
+  let calOne = useCalculator(10, 20);
+  let calTwo = useCalculator(30, 40);
+
+  console.log(calOne);
+  console.log(calTwo);
+
+  return (
+    <>
+      <h1>Result component</h1>
+
+      <hr />
+      <h2>Calculation One</h2>
+      <p>
+        Input One : {calOne.inputOne} and Input Two : {calOne.inputTwo}
+      </p>
+      <p>Addition : {calOne.addition}</p>
+      <p>Subtraction : {calOne.subtraction}</p>
+      <p>Multiplication : {calOne.multiplication}</p>
+      <p>Division : {calOne.divison}</p>
+
+      <hr />
+      <h2>Calculation Two</h2>
+      <p>
+        Input One : {calTwo.inputOne} and Input Two : {calTwo.inputTwo}
+      </p>
+      <p>Addition : {calTwo.addition}</p>
+      <p>Subtraction : {calTwo.subtraction}</p>
+      <p>Multiplication : {calTwo.multiplication}</p>
+      <p>Division : {calTwo.divison}</p>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 4:
+/*
+import React, { useEffect } from "react";
+import useFetch from "./custom hooks/useFetch";
+
+const App = () => {
+  let data = useFetch("https://fakestoreapi.com/products");
+  console.log(data);
+
+  let data2 = useFetch("https://fakestoreapi.com/users");
+  console.log(data2);
+
+  return (
+    <>
+      <h1>I am using fakestoreapi </h1>
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 5:
+import React from "react";
+import StatusBar from "./custom hooks/useStatus";
+
+const App = () => {
+  let status = StatusBar();
+  console.log(status);
+
+  return <h1>{status ? "✅ Online" : "❌ Disconnected"}</h1>;
 };
 
 export default App;
