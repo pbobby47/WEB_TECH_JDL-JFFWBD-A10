@@ -26,6 +26,8 @@ h1 {
 }
 */
 
+/*
+
 #mainNavBar {
   border: solid rgb(98, 168, 168);
 
@@ -47,4 +49,51 @@ h1 {
 #mainNavBar .active {
   text-decoration: underline double red;
   background-color: rgba(0, 128, 128, 0.577);
+}
+*/
+
+/* ! =========================== shimmer UI ======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#products_UI {
+  /* border: solid red; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#products_UI .product {
+  height: 300px;
+  width: 200px;
+  /* border: solid blue; */
+  border-radius: 10px;
+
+  border: solid gray;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#products_UI .product .imageBox {
+  /* border: solid green; */
+
+  height: 70%;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#products_UI .product .infoBox {
+  /* border: solid green; */
+  height: 20%;
 }

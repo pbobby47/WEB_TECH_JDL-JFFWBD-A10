@@ -1,12 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
-      <h1>I am Home Component</h1>
+      <center>
+        <pre>
+          <NavLink to="/">Home</NavLink> <NavLink to="/about">About</NavLink>
+           <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/login">Login</NavLink>
+        </pre>
+      </center>
 
-      
+      <h1>I am Home Component</h1>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, dolores

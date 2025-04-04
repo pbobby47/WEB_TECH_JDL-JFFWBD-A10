@@ -1,10 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
     <>
-          <h1>I am Login Component</h1>
-          
+      <h1>I am Login Component</h1>
+      <center>
+        <pre>
+          <NavLink to="/">Home</NavLink> <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/login">Login</NavLink>
+        </pre>
+      </center>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, dolores
         laudantium placeat eaque quod eius error explicabo tenetur dolor

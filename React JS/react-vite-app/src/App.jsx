@@ -3204,6 +3204,7 @@ export default App;
 */
 
 // ? Example 5:
+/*
 import React from "react";
 import StatusBar from "./custom hooks/useStatus";
 
@@ -3215,3 +3216,207 @@ const App = () => {
 };
 
 export default App;
+*/
+
+// ! =========================== React Toast ================================
+/*
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+
+const App = () => {
+  let handleSuccess = () => {
+    // write your logic here
+
+    // alert("You Have loggeed succesfully!!!");
+    toast("Wow so easy!");
+  };
+
+  return (
+    <>
+      <h1>We are learning React Toast</h1>
+      <p>
+        Benefit of this is , we create a beatufil pop up message / notifications
+      </p>
+      <button onClick={handleSuccess}>Success</button>
+
+      <ToastContainer position="top-left" />
+      <ToastContainer position="top-center" />
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ================= Shimmer UI / Shimmer Effects =================
+/*
+import React, { useEffect, useState } from "react";
+import ShimmerCard from "./shimmer UI/ShimmerCard";
+import Products from "./shimmer UI/Products";
+import axios from "axios";
+
+const App = () => {
+  let [isLoading, setLoading] = useState(true);
+  let [data, setData] = useState([]);
+
+  useEffect(() => {
+    let getData = async () => {
+      let { data } = await axios.get("https://fakestoreapi.com/products");
+      console.log(data);
+      setData(data);
+
+      setLoading(false);
+    };
+
+    setTimeout(() => {
+      getData();
+    }, 3000);
+  }, []);
+
+  return (
+    <>
+      <h1>We are learning Shimmer UI </h1>
+      <p>
+        It will improve the user experience by displaying some dummy component
+        instead of actual component
+      </p>
+
+      {isLoading ? <ShimmerCard /> : <Products title="Products" data={data} />}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ! ============== Lazy Loading ===================
+// ? without lazy loading:
+/*
+import React from "react";
+import { useState } from "react";
+import ProductsComponent from "./Lazy Loading/ProductsComponent";
+import UserComponent from "./Lazy Loading/UserComponent";
+
+const App = () => {
+  const [state, setstate] = useState(true);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+
+      {state ? <ProductsComponent /> : <UserComponent />}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? with lazy loading:
+/*
+import React from "react";
+import { useState } from "react";
+// import ProductsComponent from "./Lazy Loading/ProductsComponent";
+// import UserComponent from "./Lazy Loading/UserComponent";
+import LoadingSkeleton from "./Lazy Loading/LoadingSkeleton";
+
+// ~ Dynamic loading
+let ProductsComponent = React.lazy(() =>
+  import("./Lazy Loading/ProductsComponent")
+);
+
+let UserComponent = React.lazy(() => import("./Lazy Loading/UserComponent"));
+
+const App = () => {
+  const [state, setstate] = useState(false);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+
+      <button onClick={() => setstate(true)}>Render Products</button>
+      <button onClick={() => setstate(false)}>Render Users</button>
+
+      {state ? (
+        <React.Suspense fallback={<LoadingSkeleton />}>
+          <ProductsComponent />
+        </React.Suspense>
+      ) : (
+        <UserComponent />
+      )}
+    </>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 2:
+// using Routing version 6
+
+import React, { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// import Home from "./pages/Home";
+let Home = lazy(() => import("./pages/Home"));
+
+// import About from "./pages/About";
+let About = lazy(() => import("./pages/About"));
+
+// import Contact from "./pages/Contact";
+let Contact = lazy(() => import("./pages/Contact"));
+
+// import Login from "./pages/Login";
+let Login = lazy(() => import("./pages/Login"));
+
+import { NavLink } from "react-router-dom";
+
+const App = () => {
+  let router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Suspense fallback="Home Component is Rendering">
+          <Home />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/about",
+      element: (
+        <Suspense fallback="About Component is Rendering">
+          <About />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/contact",
+      element: (
+        <Suspense fallback="Contact Component is Rendering">
+          <Contact />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/login",
+      element: (
+        <Suspense fallback="Login Component is Rendering">
+          <Login />
+        </Suspense>
+      ),
+    },
+  ]);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+
+      <RouterProvider router={router} />
+    </>
+  );
+};
+
+export default App;
+
+// ? Example 3:
+// It's Task do using Routing version 5
