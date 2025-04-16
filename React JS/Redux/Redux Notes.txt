@@ -1,0 +1,27 @@
+Redux Notes:
+-----------
+Redux is a JS library for predictable and maintainable global state management
+
+Redux can be used with React, Angular, Vue, JavaScript, etc...
+
+
+
+To install:  
+	1.  create a folder
+	2. npm init     /   npm init -y
+	3. npm install redux
+
+Dispatches an action. It is the only way to trigger a state change.
+
+The reducer function, used to create the store, will be called with the current state tree and the given action. Its return value will be considered the next state of the tree, and the change listeners will be notified.
+
+
+
+React-Redux:
+------------
+Official React bindings for Redux
+
+
+Redux Toolkit:
+--------------
+The official, opinionated, batteries-included toolset for efficient Redux development

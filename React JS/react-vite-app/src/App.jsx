@@ -3422,25 +3422,18 @@ export default App;
 // ? Example 3:
 // It's Task do using Routing version 5
 
-// ! ======================== useReducer() Hook ================================
-/*
-An alternative to useState.
-useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values.
-It also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
-*/
-
+// ! =================== useReducer() Hook ===================
 // ? Example 1:
 /*
 import React from "react";
 import { useReducer } from "react";
 
 const App = () => {
-  console.log("I am App Component");
   let initialValue = 0;
 
   let reducer = (currentState, action) => {
-    // console.log("currentState is : ", currentState);
-    console.log("The action is :", action);
+    console.log("currenstate is : ", currentState);
+    console.log("action is: ", action);
 
     if (action === "increment") {
       return currentState + 1;
@@ -3448,6 +3441,8 @@ const App = () => {
       return currentState - 1;
     } else if (action === "reset") {
       return initialValue;
+    } else {
+      return currentState;
     }
   };
 
@@ -3455,7 +3450,11 @@ const App = () => {
 
   return (
     <>
-      <h1>I am useReducer() Hook</h1>
+      <h1>I am using useReducer() Hook</h1>
+
+      <p>useReducer() Hook is an alternative to useState() Hook.</p>
+      <p>useState -- for simple state logic</p>
+      <p>useReducer -- for complex state logic</p>
 
       <h2>Count : {count}</h2>
       <button onClick={() => dispatch("decrement")}>Decrement</button>
@@ -3469,18 +3468,17 @@ export default App;
 */
 
 // ? Example 2:
-// switch case
+// using switch case in reducer function.
 /*
 import React from "react";
 import { useReducer } from "react";
 
 const App = () => {
-  console.log("I am App Component");
   let initialValue = 0;
 
   let reducer = (currentState, action) => {
-    // console.log("currentState is : ", currentState);
-    console.log("The action is :", action);
+    console.log("currenstate is : ", currentState);
+    console.log("action is: ", action);
 
     switch (action) {
       case "increment":
@@ -3498,13 +3496,17 @@ const App = () => {
 
   return (
     <>
-      <h1>I am useReducer() Hook</h1>
+      <h1>I am using useReducer() Hook</h1>
+
+      <p>useReducer() Hook is an alternative to useState() Hook.</p>
+      <p>useState -- for simple state logic</p>
+      <p>useReducer -- for complex state logic</p>
 
       <h2>Count : {count}</h2>
       <button onClick={() => dispatch("decrement")}>Decrement</button>
       <button onClick={() => dispatch("reset")}>Reset</button>
       <button onClick={() => dispatch("increment")}>Increment</button>
-      <button onClick={() => dispatch("askdfn")}>Wrong Button</button>
+      <button onClick={() => dispatch("update")}>wrong button</button>
     </>
   );
 };
@@ -3513,18 +3515,17 @@ export default App;
 */
 
 // ? Example 3:
-// dispatching objects
+// passing object as parameter.
 /*
 import React from "react";
 import { useReducer } from "react";
 
 const App = () => {
-  console.log("I am App Component");
   let initialValue = 0;
 
   let reducer = (currentState, action) => {
-    // console.log("currentState is : ", currentState);
-    console.log("The action is :", action);
+    console.log("currenstate is : ", currentState);
+    console.log("action is: ", action);
 
     switch (action.type) {
       case "increment":
@@ -3542,7 +3543,11 @@ const App = () => {
 
   return (
     <>
-      <h1>I am useReducer() Hook</h1>
+      <h1>I am using useReducer() Hook</h1>
+
+      <p>useReducer() Hook is an alternative to useState() Hook.</p>
+      <p>useState -- for simple state logic</p>
+      <p>useReducer -- for complex state logic</p>
 
       <h2>Count : {count}</h2>
       <button onClick={() => dispatch({ type: "decrement" })}>Decrement</button>
@@ -3555,62 +3560,149 @@ const App = () => {
 export default App;
 */
 
-// ? Example 3:
-// decrement by 10, decrement by 5, decrement by 1,  reset, increment by 1, increment by 5, increment by 10.
-
+// ? Example 4:
+/*
+  increment --- 1, 5, 10
+  reset 
+  decrement --- 1, 5, 10
+*/
+/*
 import React from "react";
 import { useReducer } from "react";
 
-let initialValue = 0;
-
-let reducer = (currentState, action) => {
-  console.log("reducer fn");
-  // console.log("currentState is : ", currentState);
-  console.log("The action is :", action);
-
-  switch (action.type) {
-    case "increment":
-      return currentState + action.number;
-    case "decrement":
-      return currentState - action.number;
-    case "reset":
-      return initialValue;
-    default:
-      return currentState;
-  }
-};
-
 const App = () => {
-  console.log("I am App Component");
+  let initialValue = 0;
+
+  let reducer = (currentState, action) => {
+    console.log("currenstate is : ", currentState);
+    console.log("action is: ", action);
+
+    switch (action.type) {
+      case "increment":
+        return currentState + action.number;
+      case "decrement":
+        return currentState - action.number;
+      case "reset":
+        return initialValue;
+      default:
+        return currentState;
+    }
+  };
 
   let [count, dispatch] = useReducer(reducer, initialValue);
 
   return (
     <center>
-      <h1>I am useReducer() Hook</h1>
+      <h1>I am using useReducer() Hook</h1>
+
+
       <h2>Count : {count}</h2>
-      <button onClick={() => dispatch({ type: "decrement", number: 10 })}>
-        Decrement 10
-      </button>
-      <button onClick={() => dispatch({ type: "decrement", number: 5 })}>
-        Decrement 5
-      </button>
-      <button onClick={() => dispatch({ type: "decrement", number: 1 })}>
-        Decrement
-      </button>
+      <button onClick={()=> dispatch({type:"decrement" , number: 10})}>Decrememt 10</button>
+      <button onClick={()=> dispatch({type:"decrement" , number: 5})}>Decrememt 5</button>
+      <button onClick={()=> dispatch({type:"decrement" , number: 1})}>Decrememt 1</button>
       <br /> <br />
       <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
       <br /> <br />
-      <button onClick={() => dispatch({ type: "increment", number: 1 })}>
+      <button onClick={()=> dispatch({type:"increment" , number: 1})}>Incrememt 1</button>
+      <button onClick={()=> dispatch({type:"increment" , number: 5})}>Incrememt 5</button>
+      <button onClick={()=> dispatch({type:"increment" , number: 10})}>Incrememt 10</button>
+    </center>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 5:
+/*
+import React from "react";
+import { useReducer } from "react";
+
+let initialState = {
+  counterOne: 0,
+  counterTwo: 0,
+};
+
+let reducer = (currentState, action) => {
+  console.log("action is : ", action);
+  switch (action.type) {
+    case "decrement1":
+      return { ...currentState, counterOne: currentState.counterOne - 1 };
+    case "increment1":
+      return { ...currentState, counterOne: currentState.counterOne + 1 };
+    case "reset1":
+      return { ...currentState, counterOne: initialState.counterOne };
+    case "decrement2":
+      return { ...currentState, counterTwo: currentState.counterTwo - 1 };
+    case "increment2":
+      return { ...currentState, counterTwo: currentState.counterTwo + 1 };
+    case "reset2":
+      return { ...currentState, counterTwo: initialState.counterTwo };
+    default:
+      currentState;
+  }
+};
+
+const App = () => {
+  let [counter, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <center>
+      <h1>useReducer() Example 5</h1>
+      <h2>Counter One : {counter.counterOne}</h2>
+      <button onClick={() => dispatch({ type: "decrement1" })}>
+        Decrement
+      </button>
+      <button onClick={() => dispatch({ type: "reset1" })}>Reset</button>
+      <button onClick={() => dispatch({ type: "increment1" })}>
         Increment
       </button>
-      <button onClick={() => dispatch({ type: "increment", number: 5 })}>
-        Increment 5
+
+      <h2>Counter Two : {counter.counterTwo}</h2>
+      <button onClick={() => dispatch({ type: "decrement2" })}>
+        Decrement
       </button>
-      <button onClick={() => dispatch({ type: "increment", number: 10 })}>
-        Increment 10
+      <button onClick={() => dispatch({ type: "reset2" })}>Reset</button>
+      <button onClick={() => dispatch({ type: "increment2" })}>
+        Increment
       </button>
     </center>
+  );
+};
+
+export default App;
+*/
+
+// ? Example 6:
+// using Multiple Reducers
+
+import React from "react";
+import { useReducer } from "react";
+
+let initialState1 = 0;
+let initialState2 = 10;
+
+let reducer1 = {};
+
+let reducer2 = {};
+
+const App = () => {
+  let [counter1, dispatch1] = useReducer(reducer1, initialState1);
+  let [counter2, dispatch2] = useReducer(reducer2, initialState2);
+
+  return (
+    <>
+      <h1>I am App Component</h1>
+      <h2>Counter 1 : {counter1}</h2>
+      <button onClick={() => dispatch1("decrement")}>Decrement</button>
+      <button onClick={() => dispatch1("reset")}>Reset</button>
+      <button onClick={() => dispatch1("increment")}>Increment</button>
+
+      <h2>Counter 2 : {counter2}</h2>
+      <button onClick={() => dispatch2("decrement")}>Decrement</button>
+      <button onClick={() => dispatch2("reset")}>Reset</button>
+      <button onClick={() => dispatch2("increment")}>Increment</button>
+    </>
   );
 };
 
